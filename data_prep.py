@@ -22,11 +22,11 @@ ml_movies = pd.read_csv(
     encoding="latin-1"
 )
 
-# Extract year from title like "Toy Story (1995)" → 1995
-ml_movies["release_year"] = ml_movies["title"].str.extract(r"\((\d{4})\)$").astype(float)
+# Extract year from title - find the last (YYYY) pattern
+ml_movies["release_year"] = ml_movies["title"].str.extract(r"\((\d{4})\)(?!.*\(\d{4}\))").astype(float)
 
 # Clean title for consistency: remove the year part and lowercase
-ml_movies["title_clean"] = ml_movies["title"].str.replace(r"\s*\(\d{4}\)$", "", regex=True).str.strip()
+ml_movies["title_clean"] = ml_movies["title"].str.replace(r"\s*\(\d{4}\)(?!.*\(\d{4}\))", "", regex=True).str.strip()
 
 # Convert genre columns (0/1) to pipe-separated genre names
 def genres_to_string(row):
@@ -39,8 +39,8 @@ def genres_to_string(row):
 ml_movies["genres"] = ml_movies.apply(genres_to_string, axis=1)
 
 # Add default values for compatibility
-ml_movies["runtime"] = 120  # default runtime in minutes
-ml_movies["language"] = "en"  # default language
+ml_movies["runtime"] = 120 # default runtime in minutes
+ml_movies["language"] = "en" # default language
 
 print(f"  MovieLens 100k movies loaded: {len(ml_movies)}")
 
