@@ -1126,7 +1126,7 @@ movieId,title,genres,release_year,runtime,language
 1125,"Innocents, The (1961)",Thriller,1961.0,120,en
 1126,"Old Man and the Sea, The (1958)",Adventure|Drama,1958.0,120,en
 1127,"Truman Show, The (1998)",Drama,1998.0,120,en
-1128,Heidi Fleiss: Hollywood Madam (1995) ,Documentary,,120,en
+1128,Heidi Fleiss: Hollywood Madam (1995) ,Documentary,1995.0,120,en
 1129,Chungking Express (1994),Drama|Mystery|Romance,1994.0,120,en
 1130,Jupiter's Wife (1994),Documentary,1994.0,120,en
 1131,Safe (1995),Thriller,1995.0,120,en
@@ -1199,7 +1199,7 @@ movieId,title,genres,release_year,runtime,language
 1198,Purple Noon (1960),Crime|Thriller,1960.0,120,en
 1199,Cemetery Man (Dellamorte Dellamore) (1994),Comedy|Horror,1994.0,120,en
 1200,Kim (1950),Children's|Drama,1950.0,120,en
-1201,Marlene Dietrich: Shadow and Light (1996) ,Documentary,,120,en
+1201,Marlene Dietrich: Shadow and Light (1996) ,Documentary,1996.0,120,en
 1202,"Maybe, Maybe Not (Bewegte Mann, Der) (1994)",Comedy,1994.0,120,en
 1203,Top Hat (1935),Comedy|Musical|Romance,1935.0,120,en
 1204,To Be or Not to Be (1942),Comedy|Drama|War,1942.0,120,en
@@ -1410,7 +1410,7 @@ movieId,title,genres,release_year,runtime,language
 1409,"Swan Princess, The (1994)",Animation|Children's,1994.0,120,en
 1410,Harlem (1993),Drama,1993.0,120,en
 1411,Barbarella (1968),Adventure|Sci-Fi,1968.0,120,en
-1412,Land Before Time III: The Time of the Great Giving (1995) (V),Animation|Children's,,120,en
+1412,Land Before Time III: The Time of the Great Giving (1995) (V),Animation|Children's,1995.0,120,en
 1413,Street Fighter (1994),Action,1994.0,120,en
 1414,Coldblooded (1995),Action,1995.0,120,en
 1415,"Next Karate Kid, The (1994)",Action|Children's,1994.0,120,en
@@ -1633,7 +1633,7 @@ movieId,title,genres,release_year,runtime,language
 1632,Land and Freedom (Tierra y libertad) (1995),War,1995.0,120,en
 1633,Á köldum klaka (Cold Fever) (1994),Comedy|Drama,1994.0,120,en
 1634,Etz Hadomim Tafus (Under the Domin Tree) (1994),Drama,1994.0,120,en
-1635,Two Friends (1986) ,Drama,,120,en
+1635,Two Friends (1986) ,Drama,1986.0,120,en
 1636,Brothers in Trouble (1995),Drama,1995.0,120,en
 1637,Girls Town (1996),Drama,1996.0,120,en
 1638,Normal Life (1996),Crime|Drama,1996.0,120,en

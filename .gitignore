@@ -8,3 +8,7 @@
 # raw movie data
 data/raw/tmdb/
 data/raw/ml-100k/
+
+# pycache
+__pycache__/
+*.pyc
