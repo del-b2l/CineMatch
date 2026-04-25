@@ -1,0 +1,892 @@
+movieId,title,genres,release_year,runtime,language
+1,Toy Story (1995),Animation|Comedy|Family,1995.0,81.0,en
+10,GoldenEye (1995),Adventure|Action|Thriller,1995.0,130.0,en
+14,Nixon (1995),History|Drama,1995.0,192.0,en
+15,Cutthroat Island (1995),Action|Adventure,1995.0,119.0,en
+16,Casino (1995),Drama|Crime,1995.0,178.0,en
+17,Sense and Sensibility (1995),Drama|Romance,1995.0,136.0,en
+18,Four Rooms (1995),Crime|Comedy,1995.0,98.0,en
+19,Ace Ventura: When Nature Calls (1995),Crime|Comedy|Adventure,1995.0,90.0,en
+20,Money Train (1995),Action|Comedy|Crime,1995.0,103.0,en
+21,Get Shorty (1995),Comedy|Thriller|Crime,1995.0,105.0,en
+22,Copycat (1995),Drama|Thriller,1995.0,124.0,en
+23,Assassins (1995),Action|Adventure|Crime|Thriller,1995.0,132.0,en
+25,Leaving Las Vegas (1995),Drama|Romance,1995.0,112.0,en
+34,Babe (1995),Fantasy|Drama|Comedy|Family,1995.0,89.0,en
+36,Dead Man Walking (1995),Drama,1995.0,122.0,en
+39,Clueless (1995),Comedy|Drama|Romance,1995.0,97.0,en
+41,Richard III (1995),Drama|War,1995.0,104.0,en
+43,Restoration (1995),Horror,2016.0,90.0,en
+44,Mortal Kombat (1995),Action|Fantasy,1995.0,101.0,en
+45,To Die For (1995),Fantasy|Drama|Comedy|Thriller,1995.0,106.0,en
+48,Pocahontas (1995),Adventure|Animation|Drama|Family,1995.0,81.0,en
+57,Home for the Holidays (1995),Comedy|Drama|Romance,1995.0,103.0,en
+61,Eye for an Eye (1996),Drama|Thriller,1996.0,101.0,en
+62,Mr. Holland's Opus (1995),Music|Drama|Family,1995.0,137.0,en
+69,Friday (1995),Comedy,1995.0,91.0,en
+70,From Dusk Till Dawn (1996),Horror|Action|Thriller|Crime,1996.0,108.0,en
+71,Fair Game (1995),Drama|Thriller,2010.0,108.0,en
+81,Things to Do in Denver when You're Dead (1995),Drama|Crime,1995.0,116.0,en
+86,White Squall (1996),Action|Drama,1996.0,129.0,en
+92,Mary Reilly (1996),Drama|Horror|Thriller|Romance,1996.0,104.0,en
+93,Vampire in Brooklyn (1995),Comedy|Horror|Romance,1995.0,100.0,en
+95,Broken Arrow (1996),Action|Adventure|Drama|Thriller,1996.0,108.0,en
+100,City Hall (1996),Drama|Thriller,1996.0,111.0,en
+101,Bottle Rocket (1996),Comedy|Crime|Drama,1996.0,91.0,en
+104,Happy Gilmore (1996),Comedy,1996.0,92.0,en
+110,Braveheart (1995),Action|Drama|History|War,1995.0,177.0,en
+111,Taxi Driver (1976),Crime|Drama,1976.0,114.0,en
+112,Rumble in the Bronx (1995),Crime|Action|Comedy|Thriller,1995.0,91.0,cn
+122,Boomerang (1992),Comedy|Romance,1992.0,117.0,en
+125,Flirting With Disaster (1996),Comedy|Romance,1996.0,92.0,en
+132,Jade (1995),Action|Thriller|Mystery|Romance,1995.0,95.0,en
+137,Man of the Year (1995),Comedy|Drama|Romance|Thriller,2006.0,115.0,en
+145,Bad Boys (1995),Action|Comedy|Crime|Thriller,1995.0,118.0,en
+150,Apollo 13 (1995),Drama,1995.0,140.0,en
+151,Rob Roy (1995),Adventure,1995.0,139.0,en
+153,Batman Forever (1995),Action|Crime|Fantasy,1995.0,121.0,en
+158,Casper (1995),Fantasy|Comedy|Family,1995.0,100.0,en
+160,Congo (1995),Action|Adventure|Drama|Mystery|Science Fiction|Thriller,1995.0,109.0,en
+161,Crimson Tide (1995),Action|Thriller|Drama,1995.0,116.0,en
+163,Desperado (1995),Thriller|Action|Crime,1995.0,104.0,en
+165,Die Hard: With a Vengeance (1995),Action|Thriller,1995.0,128.0,en
+168,First Knight (1995),Action|Adventure|Drama|Romance,1995.0,134.0,en
+170,Hackers (1995),Action|Crime|Thriller|Drama,1995.0,107.0,en
+175,Kids (1995),Drama|Crime,1995.0,91.0,en
+180,Mallrats (1995),Romance|Comedy,1995.0,94.0,en
+190,Safe (1995),Action|Crime|Thriller,2012.0,94.0,en
+193,Showgirls (1995),Drama,1995.0,128.0,en
+196,Species (1995),Science Fiction|Horror|Action,1995.0,108.0,en
+204,Under Siege 2: Dark Territory (1995),Action|Thriller,1995.0,100.0,en
+208,Waterworld (1995),Adventure|Action,1995.0,135.0,en
+215,Before Sunrise (1995),Drama|Romance,1995.0,105.0,en
+223,Clerks (1994),Comedy,1994.0,92.0,en
+224,Don Juan DeMarco (1995),Romance|Drama|Comedy,1994.0,97.0,en
+225,Disclosure (1994),Drama|Thriller|Crime|Mystery|Romance,1994.0,123.0,en
+233,Exotica (1994),Drama|Mystery,1994.0,103.0,en
+235,Ed Wood (1994),Comedy|Drama|History,1994.0,127.0,en
+246,Hoop Dreams (1994),Documentary,1994.0,171.0,en
+247,Heavenly Creatures (1994),Drama|Fantasy,1994.0,99.0,en
+253,Interview with the Vampire (1994),Horror|Romance,1994.0,123.0,en
+254,Jefferson in Paris (1995),Drama|Romance,1995.0,139.0,en
+259,Kiss of Death (1995),Action|Crime|Drama|Thriller,1995.0,101.0,en
+261,Little Women (1994),Drama|Romance,1994.0,115.0,en
+266,Legends of the Fall (1994),Adventure|Drama|Romance|War,1994.0,133.0,en
+274,Man of the House (1995),Comedy|Action,2005.0,100.0,en
+292,Outbreak (1995),Action|Drama|Science Fiction|Thriller,1995.0,127.0,en
+296,Pulp Fiction (1994),Thriller|Crime,1994.0,154.0,en
+299,Priest (1994),Action|Science Fiction|Fantasy|Thriller|Horror,2011.0,87.0,en
+327,Tank Girl (1995),Action|Comedy|Fantasy|Science Fiction,1995.0,98.0,en
+329,Star Trek: Generations (1994),Science Fiction|Action|Adventure|Thriller,1994.0,118.0,en
+330,Tales from the Hood (1995),Crime|Horror|Thriller,1995.0,98.0,en
+337,What's Eating Gilbert Grape (1993),Romance|Drama,1993.0,118.0,en
+338,Virtuosity (1995),Action|Crime|Science Fiction|Thriller,1995.0,106.0,en
+344,Ace Ventura: Pet Detective (1994),Comedy|Mystery,1994.0,86.0,en
+348,Bullets Over Broadway (1994),Action|Comedy|Thriller,1994.0,98.0,en
+349,Clear and Present Danger (1994),Action|Drama|Thriller,1994.0,141.0,en
+352,Crooklyn (1994),Comedy|Drama,1994.0,115.0,en
+356,Forrest Gump (1994),Comedy|Drama|Romance,1994.0,142.0,en
+357,Four Weddings and a Funeral (1994),Comedy|Drama|Romance,1994.0,117.0,en
+377,Speed (1994),Action|Adventure|Crime,1994.0,116.0,en
+379,Timecop (1994),Thriller|Science Fiction|Action|Crime,1994.0,99.0,en
+380,True Lies (1994),Action|Thriller,1994.0,141.0,en
+382,Wolf (1994),Fantasy,1994.0,125.0,en
+383,Wyatt Earp (1994),Drama|Action|Western,1994.0,191.0,en
+384,Bad Company (1995),Action|Adventure|Comedy|Thriller,2002.0,116.0,en
+393,Street Fighter (1994),Action|Adventure|Thriller,1994.0,102.0,en
+402,Open Season (1996),Adventure|Animation|Family,2006.0,83.0,en
+420,Beverly Hills Cop III (1994),Action|Comedy|Crime,1994.0,104.0,en
+434,Cliffhanger (1993),Action|Adventure|Thriller,1993.0,112.0,en
+441,Dazed and Confused (1993),Comedy|Drama,1993.0,102.0,en
+480,Jurassic Park (1993),Adventure|Science Fiction,1993.0,127.0,en
+482,Killing Zoe (1994),Action|Crime|Drama|Thriller,1993.0,96.0,en
+485,Last Action Hero (1993),Adventure|Fantasy|Action|Comedy|Family,1993.0,130.0,en
+493,Menace II Society (1993),Drama|Action|Crime,1993.0,97.0,en
+494,Executive Decision (1996),Action|Adventure|Drama|Thriller,1996.0,133.0,en
+497,Much Ado About Nothing (1993),Drama|Comedy|Romance,1993.0,111.0,en
+500,Mrs. Doubtfire (1993),Comedy|Drama|Family,1993.0,125.0,en
+504,No Escape (1994),Action|Thriller,2015.0,103.0,en
+508,Philadelphia (1993),Drama,1993.0,125.0,en
+510,Poetic Justice (1993),Drama|Romance,1993.0,109.0,en
+516,Renaissance Man (1994),Comedy|War,1994.0,128.0,en
+519,Robocop 3 (1993),Action|Adventure|Crime|Science Fiction|Thriller,1993.0,104.0,en
+521,Romeo Is Bleeding (1993),Action|Crime|Drama|Thriller,1993.0,100.0,en
+523,Ruby in Paradise (1993),Drama|Romance,1993.0,114.0,en
+527,Schindler's List (1993),Drama|History|War,1993.0,195.0,en
+532,Serial Mom (1994),Comedy|Crime|Horror|Thriller,1994.0,95.0,en
+534,Shadowlands (1993),Drama|Romance,1993.0,131.0,en
+541,Blade Runner (1982),Science Fiction|Drama|Thriller,1982.0,117.0,en
+546,Super Mario Bros. (1993),Adventure|Comedy|Family|Fantasy,1993.0,104.0,en
+553,Tombstone (1993),Action|Adventure|Drama|History|Western,1993.0,130.0,en
+555,True Romance (1993),Action|Thriller|Crime|Romance,1993.0,120.0,en
+562,Welcome to the Dollhouse (1995),Comedy|Drama,1995.0,88.0,en
+586,Home Alone (1990),Comedy|Family,1990.0,103.0,en
+587,Ghost (1990),Fantasy|Drama|Thriller|Mystery|Romance,1990.0,127.0,en
+588,Aladdin (1992),Animation|Family|Comedy|Adventure|Fantasy|Romance,1992.0,90.0,en
+589,Terminator 2: Judgment Day (1991),Action|Thriller|Science Fiction,1991.0,137.0,en
+590,Dances with Wolves (1990),Adventure|Drama|Western,1990.0,181.0,en
+592,Batman (1989),Fantasy|Action,1989.0,126.0,en
+594,Snow White and the Seven Dwarfs (1937),Fantasy|Animation|Family,1937.0,83.0,en
+596,Pinocchio (1940),Animation|Family,1940.0,88.0,en
+597,Pretty Woman (1990),Romance|Comedy,1990.0,119.0,en
+610,Heavy Metal (1981),Animation|Science Fiction,1981.0,90.0,en
+637,Sgt. Bilko (1996),Comedy|Family,1996.0,90.0,en
+639,Girl 6 (1996),Comedy,1996.0,108.0,en
+647,Courage Under Fire (1996),Drama|Thriller|Mystery|War,1996.0,117.0,en
+648,Mission: Impossible (1996),Adventure|Action|Thriller,1996.0,110.0,en
+653,Dragonheart (1996),Fantasy,1996.0,103.0,en
+660,August (1996),Drama,2011.0,100.0,en
+664,Faithful (1996),Comedy|Crime|Drama,1996.0,91.0,en
+673,Space Jam (1996),Animation|Comedy|Drama|Family|Fantasy,1996.0,88.0,en
+674,Barbarella (1968),Science Fiction,1968.0,98.0,en
+691,Mrs. Winterbourne (1996),Comedy|Romance|Drama,1996.0,105.0,en
+711,Flipper (1996),Adventure|Family,1996.0,95.0,en
+719,Multiplicity (1996),Comedy|Fantasy|Science Fiction,1996.0,117.0,en
+736,Twister (1996),Action|Adventure|Drama,1996.0,113.0,en
+742,Thinner (1996),Horror|Thriller,1996.0,92.0,en
+743,Spy Hard (1996),Action|Comedy,1996.0,81.0,en
+750,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963),Drama|Comedy|War,1964.0,95.0,en
+762,Striptease (1996),Drama|Thriller|Crime,1996.0,115.0,en
+778,Trainspotting (1996),Drama|Crime,1996.0,93.0,en
+785,Kingpin (1996),Comedy,1996.0,113.0,en
+786,Eraser (1996),Action|Drama|Mystery|Thriller,1996.0,115.0,en
+798,Daylight (1996),Action|Adventure|Thriller,1996.0,115.0,en
+800,Lone Star (1996),Drama|Mystery|Romance,1996.0,135.0,en
+801,Harriet the Spy (1996),Comedy|Drama|Family,1996.0,100.0,en
+802,Phenomenon (1996),Drama|Fantasy|Romance|Science Fiction,1996.0,123.0,en
+803,Walking and Talking (1996),Comedy|Drama|Romance,1996.0,86.0,en
+804,She's the One (1996),Comedy|Romance,1996.0,96.0,en
+809,Fled (1996),Action|Comedy|Thriller,1996.0,98.0,en
+831,Stonewall (1995),Drama,2015.0,129.0,en
+832,Ransom (1996),Action|Thriller,1996.0,117.0,en
+836,Chain Reaction (1996),Action|Drama|Science Fiction|Thriller,1996.0,107.0,en
+838,Emma (1996),Romance|Comedy|Drama,2009.0,240.0,en
+849,Escape from L.A. (1996),Action|Adventure|Science Fiction|Thriller,1996.0,97.0,en
+851,Basquiat (1996),Drama|History,1996.0,108.0,en
+852,Tin Cup (1996),Comedy|Drama|Romance,1996.0,135.0,en
+866,Bound (1996),Crime|Drama|Romance|Thriller,1996.0,108.0,en
+869,Kansas City (1996),Thriller|Drama|Music|Crime,1996.0,116.0,en
+875,Nothing to Lose (1994),Action|Adventure|Comedy,1997.0,97.0,en
+885,Bogus (1996),Fantasy|Comedy|Family,1996.0,110.0,en
+891,Halloween: The Curse of Michael Myers (1995),Horror|Thriller,1995.0,88.0,en
+899,Singin' in the Rain (1952),Comedy|Music|Romance,1952.0,103.0,en
+905,It Happened One Night (1934),Comedy|Romance,1934.0,105.0,en
+910,Some Like It Hot (1959),Comedy|Romance,1959.0,122.0,en
+912,Casablanca (1942),Drama|Romance,1942.0,102.0,en
+914,My Fair Lady (1964),Drama|Family|Music|Romance,1964.0,170.0,en
+920,Gone with the Wind (1939),Drama|Romance|War,1939.0,238.0,en
+924,2001: A Space Odyssey (1968),Science Fiction|Mystery|Adventure,1968.0,149.0,en
+928,Rebecca (1940),Drama|Mystery,1940.0,130.0,en
+931,Spellbound (1945),Drama|Mystery|Thriller,1945.0,111.0,en
+945,Top Hat (1935),Comedy|Music|Romance,1935.0,101.0,en
+952,Around the World in 80 Days (1956),Action|Adventure|Comedy,2004.0,120.0,en
+953,It's a Wonderful Life (1946),Drama|Family|Fantasy,1946.0,130.0,en
+954,Mr. Smith Goes to Washington (1939),Comedy|Drama,1939.0,129.0,en
+968,Night of the Living Dead (1968),Horror,1968.0,96.0,en
+971,Cat on a Hot Tin Roof (1958),Drama|Romance,1958.0,108.0,en
+990,Maximum Risk (1996),Action|Adventure|Thriller,1996.0,100.0,en
+991,Michael Collins (1996),Drama|Thriller,1996.0,132.0,en
+998,Set It Off (1996),Drama|Action|Crime,1996.0,118.0,en
+1003,Extreme Measures (1996),Drama|Thriller,1996.0,118.0,en
+1019,"20,000 Leagues Under the Sea (1954)",Adventure|Drama|Science Fiction,1954.0,127.0,en
+1020,Cool Runnings (1993),Comedy,1993.0,98.0,en
+1022,Cinderella (1950),Romance|Fantasy|Family|Drama,2015.0,105.0,en
+1027,Robin Hood: Prince of Thieves (1991),Adventure,1991.0,143.0,en
+1028,Mary Poppins (1964),Comedy|Family|Fantasy,1964.0,139.0,en
+1030,Pete's Dragon (1977),Adventure|Family|Fantasy,2016.0,102.0,en
+1032,Alice in Wonderland (1951),Family|Fantasy|Adventure,2010.0,108.0,en
+1034,Freeway (1996),Comedy|Drama|Thriller,1996.0,110.0,en
+1036,Die Hard (1988),Action|Thriller,1988.0,131.0,en
+1042,That Thing You Do! (1996),Comedy|Drama,1996.0,108.0,en
+1051,Trees Lounge (1996),Comedy|Drama,1996.0,95.0,en
+1054,Get on the Bus (1996),Drama,1996.0,120.0,en
+1055,Shadow Conspiracy (1997),Action|Thriller,1997.0,103.0,en
+1057,Everyone Says I Love You (1996),Music|Comedy|Romance,1996.0,101.0,en
+1060,Swingers (1996),Comedy|Romance,1996.0,94.0,en
+1061,Sleepers (1996),Crime|Drama|Thriller,1996.0,147.0,en
+1066,Shall We Dance? (1937),Drama|Romance|Comedy,2004.0,107.0,en
+1077,Sleeper (1973),Comedy|Romance|Science Fiction,1973.0,89.0,en
+1078,Bananas (1971),Comedy,1971.0,82.0,en
+1089,Reservoir Dogs (1992),Crime|Thriller,1992.0,99.0,en
+1090,Platoon (1986),Drama|War|Action,1986.0,120.0,en
+1095,Glengarry Glen Ross (1992),Crime|Drama|Mystery,1992.0,100.0,en
+1097,E.T. the Extra-Terrestrial (1982),Science Fiction|Adventure|Family|Fantasy,1982.0,115.0,en
+1100,Days of Thunder (1990),Adventure,1990.0,107.0,en
+1101,Top Gun (1986),Action|Romance|War,1986.0,110.0,en
+1107,Loser (1991),Drama|Comedy|Romance|Family,2000.0,98.0,en
+1115,Sleepover (1995),Comedy|Family,2004.0,89.0,en
+1129,Escape from New York (1981),Science Fiction|Action,1981.0,99.0,en
+1135,Private Benjamin (1980),Comedy,1980.0,109.0,en
+1136,Monty Python and the Holy Grail (1974),Adventure|Comedy|Fantasy,1975.0,91.0,en
+1142,Get Over It (1996),Comedy|Romance,2001.0,87.0,en
+1186,"Sex, Lies, and Videotape (1989)",Drama,1989.0,100.0,en
+1193,One Flew Over the Cuckoo's Nest (1975),Drama,1975.0,133.0,en
+1198,Raiders of the Lost Ark (1981),Adventure|Action,1981.0,115.0,en
+1199,Brazil (1985),Comedy|Science Fiction,1985.0,132.0,en
+1200,Aliens (1986),Horror|Action|Thriller|Science Fiction,1986.0,137.0,en
+1203,12 Angry Men (1957),Drama,1957.0,96.0,en
+1204,Lawrence of Arabia (1962),Adventure|Drama|History|War,1962.0,216.0,en
+1207,To Kill a Mockingbird (1962),Crime|Drama,1962.0,129.0,en
+1208,Apocalypse Now (1979),Drama|War,1979.0,153.0,en
+1209,Once Upon a Time in the West (1969),Western,1968.0,175.0,it
+1213,GoodFellas (1990),Drama|Crime,1990.0,145.0,en
+1214,Alien (1979),Horror|Action|Thriller|Science Fiction,1979.0,117.0,en
+1215,Army of Darkness (1993),Fantasy|Horror|Comedy,1992.0,81.0,en
+1219,Psycho (1960),Drama|Horror|Thriller,1960.0,109.0,en
+1224,Henry V (1989),War|Drama|History|Action|Romance,1989.0,137.0,en
+1225,Amadeus (1984),Drama|History|Music,1984.0,160.0,en
+1227,Once Upon a Time in America (1984),Drama|Crime,1984.0,229.0,en
+1228,Raging Bull (1980),Drama,1980.0,129.0,en
+1230,Annie Hall (1977),Comedy|Drama|Romance,1977.0,93.0,en
+1236,Trust (1990),Crime|Drama|Thriller,2010.0,104.0,en
+1242,Glory (1989),War,1989.0,122.0,en
+1246,Dead Poets Society (1989),Drama,1989.0,129.0,en
+1259,Stand by Me (1986),Crime|Drama,1986.0,89.0,en
+1265,Groundhog Day (1993),Romance|Fantasy|Drama|Comedy,1993.0,101.0,en
+1266,Unforgiven (1992),Western,1992.0,131.0,en
+1270,Back to the Future (1985),Adventure|Comedy|Science Fiction|Family,1985.0,116.0,en
+1272,Patton (1970),Drama|History|War,1970.0,172.0,en
+1274,Akira (1988),Science Fiction|Animation,1988.0,124.0,ja
+1275,Highlander (1986),Adventure|Action|Fantasy,1986.0,116.0,en
+1278,Young Frankenstein (1974),Comedy|Science Fiction,1974.0,106.0,en
+1282,Fantasia (1940),Animation|Family|Music,1940.0,124.0,en
+1283,High Noon (1952),Western,1952.0,85.0,en
+1286,Somewhere in Time (1980),Science Fiction|Drama|Fantasy|Romance,1980.0,103.0,en
+1287,Ben-Hur (1959),Drama,2016.0,125.0,en
+1291,Indiana Jones and the Last Crusade (1989),Adventure|Action,1989.0,127.0,en
+1293,Gandhi (1982),Drama|History,1982.0,191.0,en
+1304,Butch Cassidy and the Sundance Kid (1969),History|Drama|Western|Crime,1969.0,110.0,en
+1307,When Harry Met Sally... (1989),Comedy|Romance|Drama,1989.0,96.0,en
+1320,Alien³ (1992),Science Fiction|Action|Horror,1992.0,114.0,en
+1330,April Fool's Day (1986),Horror|Mystery,1986.0,89.0,en
+1343,Cape Fear (1991),Crime|Thriller,1991.0,128.0,en
+1344,Cape Fear (1962),Crime|Thriller,1991.0,128.0,en
+1345,Carrie (1976),Drama|Horror,2013.0,100.0,en
+1346,Cat People (1982),Drama|Fantasy|Horror|Thriller,1982.0,118.0,en
+1352,Albino Alligator (1996),Crime|Drama|Thriller,1996.0,97.0,en
+1356,Star Trek: First Contact (1996),Science Fiction|Action|Adventure|Thriller,1996.0,111.0,en
+1357,Shine (1996),Drama,1996.0,105.0,en
+1358,Sling Blade (1996),Drama,1996.0,135.0,en
+1359,Jingle All the Way (1996),Family|Comedy,1996.0,89.0,en
+1370,Die Hard 2 (1990),Action|Thriller,1990.0,124.0,en
+1371,Star Trek: The Motion Picture (1979),Science Fiction|Adventure|Mystery,1979.0,132.0,en
+1372,Star Trek VI: The Undiscovered Country (1991),Science Fiction|Action|Adventure|Thriller,1991.0,113.0,en
+1373,Star Trek V: The Final Frontier (1989),Science Fiction|Action|Adventure|Thriller,1989.0,107.0,en
+1375,Star Trek III: The Search for Spock (1984),Science Fiction|Action|Adventure|Thriller,1984.0,105.0,en
+1376,Star Trek IV: The Voyage Home (1986),Science Fiction|Adventure,1986.0,119.0,en
+1377,Batman Returns (1992),Action|Fantasy,1992.0,126.0,en
+1378,Young Guns (1988),Crime|Action|Adventure|Drama|Western,1988.0,107.0,en
+1380,Grease (1978),Romance,1978.0,110.0,en
+1387,Jaws (1975),Horror|Thriller|Adventure,1975.0,124.0,en
+1388,Jaws 2 (1978),Horror|Thriller,1978.0,116.0,en
+1390,My Fellow Americans (1996),Comedy|Drama,1996.0,101.0,en
+1391,Mars Attacks! (1996),Comedy|Fantasy|Science Fiction,1996.0,106.0,en
+1393,Jerry Maguire (1996),Comedy|Drama|Romance,1996.0,139.0,en
+1399,Marvin's Room (1996),Drama,1996.0,98.0,en
+1401,Ghosts of Mississippi (1996),History|Drama,1996.0,130.0,en
+1405,Beavis and Butt-head Do America (1996),Animation|Comedy,1996.0,81.0,en
+1407,Scream (1996),Crime|Horror|Mystery,1996.0,111.0,en
+1411,Hamlet (1996),Drama,1996.0,242.0,en
+1416,Evita (1996),History|Drama|Music,1996.0,134.0,en
+1427,Turbulence (1997),Action|Thriller|Crime,1997.0,100.0,en
+1430,Underworld (1997),Fantasy|Action|Thriller,2003.0,121.0,en
+1438,Dante's Peak (1997),Action|Adventure|Thriller,1997.0,108.0,en
+1442,Prefontaine (1997),Drama|Romance,1997.0,106.0,en
+1449,Waiting for Guffman (1996),Music|Comedy,1996.0,84.0,en
+1459,Absolute Power (1997),Crime|Drama|Thriller,1997.0,121.0,en
+1466,Donnie Brasco (1997),Crime|Drama|Thriller,1997.0,127.0,en
+1477,Love Jones (1997),Comedy|Drama|Romance,1997.0,104.0,en
+1480,Smilla's Sense of Snow (1997),Action|Crime|Drama|Mystery|Thriller,1997.0,121.0,en
+1483,Crash (1996),Drama,2004.0,112.0,en
+1485,Liar Liar (1997),Comedy,1997.0,86.0,en
+1487,Selena (1997),Drama,1997.0,127.0,en
+1489,Cats Don't Dance (1997),Animation|Comedy|Family|Music,1997.0,75.0,en
+1493,Love and Other Catastrophes (1996),Comedy|Romance,1996.0,78.0,it
+1496,Anna Karenina (1997),Drama|Romance,2012.0,130.0,en
+1499,Anaconda (1997),Adventure|Horror|Thriller,1997.0,89.0,en
+1500,Grosse Pointe Blank (1997),Action|Comedy|Thriller|Romance,1997.0,107.0,en
+1503,8 Heads in a Duffel Bag (1997),Comedy|Crime,1997.0,95.0,en
+1515,Volcano (1997),Science Fiction|Action|Drama|Thriller,1997.0,104.0,en
+1517,Austin Powers: International Man of Mystery (1997),Science Fiction|Comedy|Crime,1997.0,94.0,en
+1518,Breakdown (1997),Drama|Action|Thriller,1997.0,95.0,en
+1525,Warriors of Virtue (1997),Fantasy|Family|Action,1997.0,103.0,en
+1552,Con Air (1997),Action|Thriller|Crime,1997.0,115.0,en
+1556,Speed 2: Cruise Control (1997),Action|Adventure|Thriller,1997.0,121.0,en
+1562,Batman & Robin (1997),Action|Crime|Fantasy,1997.0,125.0,en
+1563,Dream With the Fishes (1997),Comedy,1997.0,97.0,en
+1566,Hercules (1997),Action|Adventure,2014.0,99.0,en
+1569,My Best Friend's Wedding (1997),Comedy|Romance,1997.0,105.0,en
+1573,Face/Off (1997),Action|Crime|Science Fiction|Thriller,1997.0,138.0,en
+1580,Men in Black (1997),Action|Adventure|Comedy|Science Fiction,1997.0,98.0,en
+1584,Contact (1997),Drama|Science Fiction|Mystery,1997.0,150.0,en
+1586,G.I. Jane (1997),Action|Drama,1997.0,125.0,en
+1587,Conan the Barbarian (1982),Adventure|Fantasy|Action,1982.0,129.0,en
+1588,George of the Jungle (1997),Adventure|Comedy|Family|Romance,1997.0,92.0,en
+1589,Cop Land (1997),Action|Crime|Drama,1997.0,104.0,en
+1590,Event Horizon (1997),Horror|Science Fiction|Mystery,1997.0,96.0,en
+1591,Spawn (1997),Action|Adventure|Fantasy|Horror|Science Fiction|Thriller,1997.0,96.0,en
+1592,Air Bud (1997),Comedy|Family|Drama,1997.0,98.0,en
+1594,In the Company of Men (1997),Comedy|Drama,1997.0,97.0,en
+1597,Conspiracy Theory (1997),Action|Drama|Mystery|Thriller,1997.0,135.0,en
+1599,Steel (1997),Science Fiction|Action|Adventure,1997.0,97.0,en
+1604,Money Talks (1997),Action|Adventure|Comedy,1997.0,97.0,en
+1608,Air Force One (1997),Action|Thriller,1997.0,124.0,en
+1611,My Own Private Idaho (1991),Drama|Romance,1991.0,104.0,en
+1614,In & Out (1997),Comedy|Romance,1997.0,90.0,en
+1617,L.A. Confidential (1997),Crime|Drama|Mystery|Thriller,1997.0,138.0,en
+1619,Seven Years in Tibet (1997),Adventure|Drama|History,1997.0,136.0,en
+1620,Kiss the Girls (1997),Drama|Mystery|Thriller|Crime,1997.0,115.0,en
+1621,Soul Food (1997),Comedy|Drama,1997.0,114.0,en
+1633,Ulee's Gold (1997),Drama,1997.0,112.0,en
+1639,Chasing Amy (1997),Comedy|Drama|Romance,1997.0,113.0,en
+1644,I Know What You Did Last Summer (1997),Horror|Thriller|Mystery,1997.0,100.0,en
+1653,Gattaca (1997),Thriller|Science Fiction|Mystery|Romance,1997.0,106.0,en
+1657,Wonderland (1997),Crime|Drama|Mystery|Thriller,2003.0,104.0,en
+1659,Hurricane Streets (1998),Romance|Crime|Drama,1997.0,86.0,en
+1660,Eve's Bayou (1997),Drama,1997.0,109.0,en
+1661,Switchback (1997),Action|Adventure|Mystery|Thriller,1997.0,118.0,en
+1663,Stripes (1981),Action|Comedy,1981.0,106.0,en
+1667,Mad City (1997),Action|Drama|Thriller,1997.0,114.0,en
+1673,Boogie Nights (1997),Drama,1997.0,155.0,en
+1674,Witness (1985),Crime|Drama|Romance|Thriller,1985.0,113.0,en
+1676,Starship Troopers (1997),Adventure|Action|Thriller|Science Fiction,1997.0,129.0,en
+1677,Critical Care (1997),Comedy|Drama,1997.0,107.0,en
+1679,Chairman of the Board (1998),Comedy,1998.0,95.0,en
+1680,Sliding Doors (1998),Comedy|Drama|Fantasy|Romance,1998.0,99.0,en
+1681,Mortal Kombat: Annihilation (1997),Action|Fantasy|Science Fiction,1997.0,95.0,en
+1688,Anastasia (1997),Animation|Family,1997.0,94.0,en
+1690,Alien: Resurrection (1997),Science Fiction|Horror|Action,1997.0,109.0,en
+1693,Amistad (1997),Drama|History|Mystery,1997.0,155.0,en
+1701,Deconstructing Harry (1997),Comedy|Drama,1997.0,96.0,en
+1702,Flubber (1997),Comedy|Family|Science Fiction,1997.0,93.0,en
+1704,Good Will Hunting (1997),Drama,1997.0,126.0,en
+1711,Midnight in the Garden of Good and Evil (1997),Crime|Drama|Mystery|Thriller,1997.0,155.0,en
+1717,Scream 2 (1997),Horror|Mystery,1997.0,120.0,en
+1721,Titanic (1997),Drama|Romance|Thriller,1997.0,194.0,en
+1722,Tomorrow Never Dies (1997),Adventure|Action|Thriller,1997.0,119.0,en
+1729,Jackie Brown (1997),Comedy|Crime|Romance,1997.0,154.0,en
+1730,Kundun (1997),Drama,1997.0,134.0,en
+1744,Firestorm (1998),Action|Crime,2013.0,110.0,zh
+1747,Wag the Dog (1997),Comedy|Drama,1997.0,97.0,en
+1748,Dark City (1998),Mystery|Science Fiction,1998.0,100.0,en
+1752,Hard Rain (1998),Thriller,1998.0,97.0,en
+1753,Half Baked (1998),Comedy|Crime,1998.0,82.0,en
+1755,Shooting Fish (1997),Crime|Comedy|Romance,1997.0,109.0,en
+1760,Spice World (1997),Adventure|Fantasy|Drama|Comedy|Music,1997.0,93.0,en
+1762,Deep Rising (1998),Adventure|Action|Horror|Science Fiction,1998.0,106.0,en
+1779,Sphere (1998),Science Fiction,1998.0,134.0,en
+1784,As Good As It Gets (1997),Comedy|Romance,1997.0,139.0,en
+1791,Twilight (1998),Adventure|Fantasy|Drama|Romance,2008.0,122.0,en
+1794,Love and Death on Long Island (1997),Drama|Romance|Foreign,1997.0,93.0,en
+1797,Everest (1998),Adventure|Drama,2015.0,121.0,en
+1805,Wild Things (1998),Crime|Drama|Mystery,1998.0,108.0,en
+1810,Primary Colors (1998),Comedy|Drama,1998.0,143.0,en
+1815,Eden (1997),Thriller|Drama,2015.0,97.0,en
+1816,Two Girls and a Guy (1997),Drama|Romance,1997.0,84.0,en
+1822,Meet the Deedles (1998),Animation|Comedy|Family,1998.0,93.0,en
+1826,Barney's Great Adventure (1998),Family,1998.0,76.0,en
+1831,Lost in Space (1998),Adventure|Family|Science Fiction,1998.0,130.0,en
+1833,Mercury Rising (1998),Action|Crime|Drama|Thriller,1998.0,111.0,en
+1835,City of Angels (1998),Drama|Fantasy|Romance,1998.0,114.0,en
+1840,He Got Game (1998),Drama,1998.0,136.0,en
+1845,Zero Effect (1998),Comedy|Crime|Mystery|Thriller,1998.0,116.0,en
+1850,"I Love You, Don't Touch Me! (1998)",Comedy|Romance,1997.0,86.0,fr
+1858,Mr. Nice Guy (1997),Crime|Action|Comedy,1997.0,113.0,cn
+1870,"Dancer, Texas Pop. 81 (1998)",Comedy|Drama|Family,1998.0,97.0,en
+1875,Clockwatchers (1997),Comedy|Drama,1997.0,96.0,en
+1876,Deep Impact (1998),Action|Drama|Romance,1998.0,120.0,en
+1878,Woo (1998),Comedy|Romance,1998.0,84.0,en
+1881,Quest for Camelot (1998),Fantasy|Animation|Drama|Romance|Family,1998.0,86.0,en
+1883,Bulworth (1998),Comedy|Drama,1998.0,108.0,en
+1884,Fear and Loathing in Las Vegas (1998),Adventure|Drama|Comedy,1998.0,118.0,en
+1886,I Got the Hook Up (1998),Action|Comedy,1998.0,93.0,en
+1888,Hope Floats (1998),Drama|Romance,1998.0,114.0,en
+1889,Insomnia (1997),Crime|Mystery|Thriller,2002.0,118.0,en
+1894,Six Days Seven Nights (1998),Action|Adventure|Comedy|Romance,1998.0,98.0,en
+1895,Can't Hardly Wait (1998),Comedy|Drama|Romance,1998.0,100.0,en
+1903,Hav Plenty (1997),Action|Comedy|Romance|Science Fiction|Thriller,1997.0,92.0,en
+1907,Mulan (1998),Animation|Family|Adventure,1998.0,88.0,en
+1911,Doctor Dolittle (1998),Comedy|Family|Fantasy,1998.0,85.0,en
+1912,Out of Sight (1998),Romance|Comedy|Crime,1998.0,123.0,en
+1914,Smoke Signals (1998),Drama|Comedy,1998.0,89.0,en
+1917,Armageddon (1998),Action|Thriller|Science Fiction|Adventure,1998.0,151.0,en
+1918,Lethal Weapon 4 (1998),Action|Adventure|Comedy|Crime|Thriller,1998.0,127.0,en
+1920,Small Soldiers (1998),Comedy|Adventure|Fantasy|Science Fiction|Action,1998.0,110.0,en
+1921,Pi (1998),Mystery|Drama|Thriller,1998.0,84.0,en
+1923,There's Something About Mary (1998),Romance|Comedy,1998.0,119.0,en
+1934,You Can't Take It With You (1938),Comedy|Romance,1938.0,126.0,en
+1935,How Green Was My Valley (1941),Drama,1941.0,118.0,en
+1940,Gentleman's Agreement (1947),Drama|Romance,1947.0,118.0,en
+1941,Hamlet (1948),Drama,1996.0,242.0,en
+1942,All the King's Men (1949),Drama|Thriller,2006.0,125.0,en
+1944,From Here to Eternity (1953),War|Drama|Romance,1953.0,118.0,en
+1945,On the Waterfront (1954),Crime|Drama,1954.0,108.0,en
+1947,West Side Story (1961),Crime|Drama|Music,1961.0,152.0,en
+1948,Tom Jones (1963),Adventure|Comedy|History|Romance,1963.0,128.0,en
+1951,Oliver! (1968),Drama|Family|Music,1968.0,153.0,en
+1952,Midnight Cowboy (1969),Drama,1969.0,113.0,en
+1954,Rocky (1976),Drama,1976.0,119.0,en
+1956,Ordinary People (1980),Drama,1980.0,124.0,en
+1957,Chariots of Fire (1981),Drama|History,1981.0,123.0,en
+1959,Out of Africa (1985),Drama,1985.0,161.0,en
+1961,Rain Man (1988),Drama,1988.0,133.0,en
+1962,Driving Miss Daisy (1989),Comedy|Drama,1989.0,99.0,en
+1965,Repo Man (1984),Comedy|Crime|Science Fiction|Thriller,1984.0,92.0,en
+1966,Metropolitan (1990),Comedy|Drama,1990.0,98.0,en
+1973,Freddy's Dead: The Final Nightmare (1991),Horror|Thriller|Comedy,1991.0,89.0,en
+1975,Friday the 13th Part 2 (1981),Horror|Thriller,1981.0,87.0,en
+1977,Friday the 13th: The Final Chapter (1984),Horror|Thriller,1984.0,91.0,en
+1979,Friday the 13th Part VI: Jason Lives (1986),Horror|Mystery|Thriller,1986.0,86.0,en
+1980,Friday the 13th Part VII: The New Blood (1988),Horror|Thriller,1988.0,88.0,en
+1981,Friday the 13th Part VIII: Jason Takes Manhattan (1989),Horror|Thriller,1989.0,100.0,en
+1982,Halloween (1978),Horror|Thriller,1978.0,91.0,en
+1983,Halloween II (1981),Horror,2009.0,105.0,en
+1984,Halloween III: Season of the Witch (1983),Horror|Mystery|Science Fiction,1982.0,98.0,en
+1985,Halloween 4: The Return of Michael Myers (1988),Horror|Thriller,1988.0,88.0,en
+1986,Halloween 5: The Revenge of Michael Myers (1989),Horror|Thriller,1989.0,96.0,en
+1987,Prom Night (1980),Crime|Horror,2008.0,88.0,en
+1991,Child's Play (1988),Horror|Thriller,1988.0,87.0,en
+1992,Child's Play 2 (1990),Drama|Horror,1990.0,84.0,en
+1994,Poltergeist (1982),Horror,1982.0,114.0,en
+1996,Poltergeist III (1988),Horror|Thriller,1988.0,98.0,en
+1998,Exorcist II: The Heretic (1977),Horror|Thriller|Fantasy,1977.0,118.0,en
+2002,Lethal Weapon 3 (1992),Adventure|Action|Comedy|Thriller|Crime,1992.0,118.0,en
+2003,Gremlins (1984),Fantasy|Horror|Comedy,1984.0,106.0,en
+2004,Gremlins 2: The New Batch (1990),Comedy|Horror|Fantasy,1990.0,106.0,en
+2010,Metropolis (1926),Drama|Science Fiction,1927.0,153.0,de
+2011,Back to the Future Part II (1989),Adventure|Comedy|Family|Science Fiction,1989.0,108.0,en
+2012,Back to the Future Part III (1990),Adventure|Comedy|Family|Science Fiction,1990.0,118.0,en
+2014,Freaky Friday (1977),Comedy,2003.0,97.0,en
+2018,Bambi (1942),Animation|Drama|Family,1942.0,70.0,en
+2020,Dangerous Liaisons (1988),Drama|Romance,1988.0,119.0,en
+2021,Dune (1984),Action|Science Fiction|Adventure,1984.0,137.0,en
+2025,Lolita (1997),Drama|Romance,1962.0,153.0,en
+2026,Disturbing Behavior (1998),Mystery|Horror|Science Fiction,1998.0,84.0,en
+2028,Saving Private Ryan (1998),Drama|History|War,1998.0,169.0,en
+2052,Hocus Pocus (1993),Comedy|Family|Fantasy,1993.0,96.0,en
+2064,Roger & Me (1989),Documentary|History,1989.0,91.0,en
+2067,Doctor Zhivago (1965),Drama|Romance|War,1965.0,197.0,en
+2093,Return to Oz (1985),Adventure|Family|Fantasy,1985.0,109.0,en
+2100,Splash (1984),Comedy|Fantasy|Romance,1984.0,111.0,en
+2115,Indiana Jones and the Temple of Doom (1984),Adventure|Action,1984.0,118.0,en
+2125,Ever After: A Cinderella Story (1998),Drama|Romance|Comedy,1998.0,121.0,en
+2126,Snake Eyes (1998),Crime|Mystery,1998.0,98.0,en
+2127,"First Love, Last Rites (1997)",Drama,1998.0,94.0,en
+2128,Safe Men (1998),Comedy|Crime,1998.0,88.0,en
+2135,Doctor Dolittle (1967),Comedy|Family|Fantasy,1998.0,85.0,en
+2137,Charlotte's Web (1973),Comedy|Family|Fantasy,2006.0,97.0,en
+2143,Legend (1985),Crime|Thriller,2015.0,131.0,en
+2154,How Stella Got Her Groove Back (1998),Comedy|Drama|Romance,1998.0,124.0,en
+2160,Rosemary's Baby (1968),Horror|Drama|Mystery,1968.0,136.0,en
+2167,Blade (1998),Horror|Action,1998.0,120.0,en
+2169,Dead Man on Campus (1998),Comedy,1998.0,96.0,en
+2174,Beetlejuice (1988),Fantasy|Comedy,1988.0,92.0,en
+2175,Déjà Vu (1997),Romance|Drama,1998.0,117.0,en
+2177,Family Plot (1976),Comedy|Crime|Thriller,1976.0,121.0,en
+2178,Frenzy (1972),Crime|Drama|Mystery|Thriller,1972.0,116.0,en
+2179,Topaz (1969),Action|Drama|Mystery|Thriller,1969.0,143.0,en
+2180,Torn Curtain (1966),Mystery|Thriller,1966.0,128.0,en
+2188,54 (1998),Music|Drama,1998.0,106.0,en
+2195,Dirty Work (1998),Comedy,1998.0,82.0,en
+2196,Knock Off (1998),Action|Adventure|Thriller,1998.0,91.0,en
+2205,Mr. & Mrs. Smith (1941),Action|Comedy|Drama|Thriller,2005.0,120.0,en
+2210,Sabotage (1936),Action|Drama|Thriller|Crime,2014.0,110.0,en
+2225,Easy Virtue (1927),Comedy|Romance,2008.0,93.0,en
+2231,Rounders (1998),Drama|Crime,1998.0,121.0,en
+2232,Cube (1997),Thriller|Science Fiction|Mystery,1997.0,90.0,en
+2235,One Man's Hero (1999),Western|Action|Drama|History,1999.0,121.0,en
+2236,Simon Birch (1998),Comedy|Drama|Family,1998.0,114.0,en
+2237,Without Limits (1998),Drama,1998.0,117.0,en
+2252,Hero (1992),Drama|Adventure|Action|History,2002.0,99.0,zh
+2264,We're No Angels (1989),Comedy|Crime|Drama,1989.0,106.0,en
+2272,One True Thing (1998),Drama|Romance,1998.0,127.0,en
+2275,Six-String Samurai (1998),Action|Adventure|Science Fiction,1998.0,91.0,en
+2278,Ronin (1998),Action|Thriller|Crime|Adventure,1998.0,122.0,en
+2279,Urban Legend (1998),Horror|Thriller,1998.0,99.0,en
+2280,Clay Pigeons (1998),Comedy|Crime|Drama|Thriller,1998.0,104.0,en
+2291,Edward Scissorhands (1990),Fantasy|Drama|Romance,1990.0,105.0,en
+2294,Antz (1998),Adventure|Animation|Comedy|Family,1998.0,83.0,en
+2297,What Dreams May Come (1998),Drama|Fantasy|Romance,1998.0,113.0,en
+2301,History of the World: Part I (1981),Comedy,1981.0,92.0,en
+2302,My Cousin Vinny (1992),Comedy|Drama,1992.0,120.0,en
+2305,Slam (1998),Drama,1998.0,100.0,en
+2306,Holy Man (1998),Drama|Comedy,1998.0,114.0,en
+2314,Beloved (1998),Drama|Thriller,1998.0,172.0,en
+2315,Bride of Chucky (1998),Horror|Comedy,1998.0,89.0,en
+2316,Practical Magic (1998),Drama|Fantasy|Comedy,1998.0,104.0,en
+2318,Happiness (1998),Comedy|Drama,1998.0,139.0,en
+2322,Soldier (1998),Action|War|Science Fiction,1998.0,99.0,en
+2325,Orgazmo (1997),Comedy,1997.0,94.0,en
+2328,Vampires (1998),Action|Drama|Fantasy|Horror|Thriller,1998.0,108.0,en
+2329,American History X (1998),Drama,1998.0,119.0,en
+2331,Living Out Loud (1998),Comedy|Drama|Romance,1998.0,100.0,en
+2333,Gods and Monsters (1998),Drama,1998.0,105.0,en
+2336,Elizabeth (1998),Drama|History,1998.0,124.0,en
+2337,Velvet Goldmine (1998),Drama|Music,1998.0,119.0,en
+2338,I Still Know What You Did Last Summer (1998),Horror|Mystery|Thriller,1998.0,100.0,en
+2340,Meet Joe Black (1998),Fantasy|Drama|Mystery,1998.0,178.0,en
+2353,Enemy of the State (1998),Action|Drama|Thriller,1998.0,132.0,en
+2356,Celebrity (1998),Drama|Comedy,1998.0,113.0,en
+2361,Pink Flamingos (1972),Horror|Comedy|Crime,1972.0,93.0,en
+2366,King Kong (1933),Adventure|Drama|Action,2005.0,187.0,en
+2367,King Kong (1976),Adventure|Drama|Action,2005.0,187.0,en
+2373,Red Sonja (1985),Adventure|Fantasy|Action,1985.0,89.0,en
+2377,Lifeforce (1985),Fantasy|Horror|Science Fiction|Thriller,1985.0,116.0,en
+2378,Police Academy (1984),Comedy|Crime,1984.0,96.0,en
+2384,Babe: Pig in the City (1998),Adventure|Comedy|Drama|Family|Fantasy,1998.0,92.0,en
+2385,Home Fries (1998),Drama|Comedy|Romance,1998.0,93.0,en
+2387,Very Bad Things (1998),Comedy|Crime|Thriller,1998.0,100.0,en
+2389,Psycho (1998),Drama|Horror|Thriller,1960.0,109.0,en
+2390,Little Voice (1998),Comedy|Drama,1998.0,97.0,en
+2393,Star Trek: Insurrection (1998),Science Fiction|Action|Adventure|Thriller,1998.0,103.0,en
+2395,Rushmore (1998),Comedy|Drama,1998.0,93.0,en
+2396,Shakespeare in Love (1998),Romance|History,1998.0,122.0,en
+2401,Pale Rider (1985),Romance|Western,1985.0,115.0,en
+2402,Rambo: First Blood Part II (1985),Action|Adventure|Thriller|War,1985.0,96.0,en
+2403,First Blood (1982),Action|Adventure|Thriller|War,1982.0,93.0,en
+2404,Rambo III (1988),Action|Adventure|Thriller|War,1988.0,102.0,en
+2414,Young Sherlock Holmes (1985),Action|Adventure|Crime|Drama|Family|Mystery|Thriller,1985.0,109.0,en
+2424,You've Got Mail (1998),Comedy|Romance,1998.0,119.0,en
+2429,Mighty Joe Young (1998),Action|Adventure|Family|Fantasy,1998.0,114.0,en
+2430,Mighty Joe Young (1949),Action|Adventure|Family|Fantasy,1998.0,114.0,en
+2431,Patch Adams (1998),Comedy|Drama,1998.0,115.0,en
+2432,Stepmom (1998),Drama|Romance,1998.0,124.0,en
+2436,Tea with Mussolini (1999),Comedy|Drama|War,1999.0,117.0,en
+2444,24 7: Twenty Four Seven (1997),Comedy|Drama|Romance,1997.0,96.0,en
+2445,At First Sight (1999),Drama|Romance,1999.0,128.0,en
+2446,In Dreams (1999),Drama|Thriller,1999.0,100.0,en
+2447,Varsity Blues (1999),Comedy|Drama|Romance,1999.0,106.0,en
+2450,Howard the Duck (1986),Comedy|Fantasy|Science Fiction,1986.0,110.0,en
+2457,Running Scared (1986),Action|Crime|Drama|Thriller,2006.0,122.0,en
+2469,Peggy Sue Got Married (1986),Comedy|Drama|Fantasy|Romance,1986.0,103.0,en
+2470,Crocodile Dundee (1986),Adventure|Comedy,1986.0,97.0,en
+2471,Crocodile Dundee II (1988),Adventure|Comedy,1988.0,110.0,en
+2485,She's All That (1999),Comedy|Romance,1999.0,95.0,en
+2490,Payback (1999),Drama|Action|Thriller|Crime,1999.0,100.0,en
+2491,Simply Irresistible (1999),Comedy,1999.0,95.0,en
+2492,20 Dates (1998),Romance|Comedy,1998.0,87.0,en
+2496,Blast from the Past (1999),Comedy|Romance,1999.0,112.0,en
+2497,Message in a Bottle (1999),Romance|Drama,1999.0,131.0,en
+2498,My Favorite Martian (1999),Comedy|Drama|Family|Science Fiction,1999.0,94.0,en
+2500,Jawbreaker (1999),Comedy,1999.0,87.0,en
+2502,Office Space (1999),Comedy|Crime,1999.0,89.0,en
+2504,200 Cigarettes (1999),Comedy|Drama|Romance,1999.0,101.0,en
+2505,8MM (1999),Thriller|Crime|Mystery,1999.0,123.0,en
+2507,Breakfast of Champions (1999),Comedy,1999.0,110.0,en
+2513,Pet Sematary (1989),Drama|Horror,1989.0,103.0,en
+2519,House on Haunted Hill (1958),Horror|Mystery|Thriller,1999.0,93.0,en
+2526,Meteor (1979),Action|Science Fiction|Thriller,1979.0,107.0,en
+2528,Logan's Run (1976),Adventure|Action|Romance|Science Fiction,1976.0,119.0,en
+2529,Planet of the Apes (1968),Thriller|Science Fiction|Action|Adventure,2001.0,119.0,en
+2530,Beneath the Planet of the Apes (1970),Adventure|Science Fiction|Mystery,1970.0,95.0,en
+2531,Battle for the Planet of the Apes (1973),Action|Science Fiction,1973.0,93.0,en
+2532,Conquest of the Planet of the Apes (1972),Action|Science Fiction,1972.0,88.0,en
+2533,Escape from the Planet of the Apes (1971),Action|Science Fiction,1971.0,98.0,en
+2539,Analyze This (1999),Comedy|Crime,1999.0,103.0,en
+2541,Cruel Intentions (1999),Drama|Romance|Thriller,1999.0,97.0,en
+2549,Wing Commander (1999),Action|Science Fiction,1999.0,100.0,en
+2555,Baby Geniuses (1999),Science Fiction|Comedy|Family,1999.0,97.0,en
+2560,Ravenous (1999),Comedy|Horror|Thriller|Western,1999.0,100.0,en
+2562,Bandits (1997),Action|Comedy|Crime|Romance,2001.0,123.0,en
+2566,Doug's 1st Movie (1999),Animation|Family|Comedy,1999.0,77.0,en
+2567,EDtv (1999),Comedy,1999.0,122.0,en
+2569,Among Giants (1998),Comedy|Romance,1998.0,93.0,en
+2572,10 Things I Hate About You (1999),Comedy|Romance|Drama,1999.0,97.0,en
+2573,Tango (1998),Drama|Foreign|Romance,1998.0,115.0,es
+2580,Go (1999),Crime|Comedy|Thriller,1999.0,98.0,en
+2584,Foolish (1999),Comedy|Drama,1999.0,84.0,en
+2598,Pushing Tin (1999),Comedy|Drama,1999.0,124.0,en
+2599,Election (1999),Comedy,1999.0,99.0,en
+2600,eXistenZ (1999),Action|Thriller|Science Fiction|Horror,1999.0,97.0,en
+2605,Entrapment (1999),Romance|Drama|Mystery,1999.0,112.0,en
+2606,Idle Hands (1999),Thriller|Comedy|Horror,1999.0,92.0,en
+2616,Dick Tracy (1990),Adventure|Action|Comedy|Thriller|Crime,1990.0,103.0,en
+2623,Trippin' (1999),Comedy|Romance,1999.0,94.0,en
+2628,Star Wars: Episode I - The Phantom Menace (1999),Adventure|Action|Science Fiction,1999.0,136.0,en
+2639,Mommie Dearest (1981),Drama,1981.0,129.0,en
+2640,Superman (1978),Action|Adventure|Fantasy|Science Fiction,1978.0,143.0,en
+2641,Superman II (1980),Action|Adventure|Fantasy|Science Fiction,1980.0,127.0,en
+2642,Superman III (1983),Comedy|Action|Adventure|Fantasy|Science Fiction,1983.0,125.0,en
+2643,Superman IV: The Quest for Peace (1987),Action|Adventure|Science Fiction,1987.0,90.0,en
+2644,Dracula (1931),Romance|Horror,1992.0,128.0,en
+2645,Dracula (1958),Romance|Horror,1992.0,128.0,en
+2671,Notting Hill (1999),Romance|Comedy|Drama,1999.0,124.0,en
+2676,Instinct (1999),Drama|Mystery|Thriller,1999.0,126.0,en
+2678,Desert Blue (1999),Comedy|Drama,1999.0,90.0,en
+2682,Limbo (1999),Adventure|Drama|Thriller,1999.0,126.0,en
+2683,Austin Powers: The Spy Who Shagged Me (1999),Adventure|Comedy|Crime|Science Fiction,1999.0,95.0,en
+2684,Taxman (1999),Action|Crime|Comedy|Thriller,1999.0,104.0,en
+2693,Trekkies (1997),Documentary,1997.0,86.0,en
+2694,Big Daddy (1999),Comedy|Drama,1999.0,93.0,en
+2699,Arachnophobia (1990),Comedy|Horror,1990.0,103.0,en
+2701,Wild Wild West (1999),Action|Adventure|Comedy|Science Fiction|Western,1999.0,106.0,en
+2702,Summer of Sam (1999),Thriller|Drama|Crime|Romance,1999.0,142.0,en
+2703,Broken Vessels (1998),Drama,1998.0,90.0,en
+2706,American Pie (1999),Comedy|Romance,1999.0,95.0,en
+2707,Arlington Road (1999),Drama|Thriller|Mystery,1999.0,117.0,en
+2709,Muppets From Space (1999),Fantasy|Comedy|Science Fiction|Family,1999.0,87.0,en
+2712,Eyes Wide Shut (1999),Mystery|Drama,1999.0,159.0,en
+2713,Lake Placid (1999),Horror|Comedy|Action|Science Fiction|Thriller,1999.0,82.0,en
+2716,Ghostbusters (1984),Action|Fantasy|Comedy,2016.0,116.0,en
+2718,Drop Dead Gorgeous (1999),Comedy,1999.0,98.0,en
+2720,Inspector Gadget (1999),Action|Adventure|Comedy|Family,1999.0,78.0,en
+2722,Deep Blue Sea (1999),Action|Science Fiction|Thriller,1999.0,105.0,en
+2723,Mystery Men (1999),Adventure|Fantasy|Action|Comedy|Science Fiction,1999.0,121.0,en
+2724,Runaway Bride (1999),Comedy|Romance,1999.0,116.0,en
+2725,Twin Falls Idaho (1999),Drama|Romance,1999.0,111.0,en
+2729,Lolita (1962),Drama|Romance,1962.0,153.0,en
+2730,Barry Lyndon (1975),Drama|Romance|War,1975.0,184.0,en
+2746,Little Shop of Horrors (1986),Horror|Comedy|Music,1986.0,94.0,en
+2750,Radio Days (1987),Comedy|Drama,1987.0,90.0,en
+2759,Dick (1999),Comedy,1999.0,94.0,en
+2767,Illuminata (1998),Drama,1998.0,119.0,en
+2768,Stiff Upper Lips (1998),Comedy,1998.0,99.0,en
+2770,Bowfinger (1999),Comedy,1999.0,97.0,en
+2771,Brokedown Palace (1999),Drama|Thriller,1999.0,100.0,en
+2772,Detroit Rock City (1999),Comedy|Music,1999.0,95.0,en
+2791,Airplane! (1980),Comedy,1980.0,88.0,en
+2795,Vacation (1983),Comedy,2015.0,99.0,en
+2797,Big (1988),Fantasy|Drama|Comedy|Romance|Family,1988.0,104.0,en
+2805,Mickey Blue Eyes (1999),Comedy|Crime|Romance,1999.0,102.0,en
+2807,Universal Soldier: The Return (1999),Action|Science Fiction,1999.0,82.0,en
+2809,Love Stinks (1999),Comedy|Romance,1999.0,94.0,en
+2812,In Too Deep (1999),Drama|Action|Thriller|Crime,1999.0,97.0,en
+2820,Hamlet (1964),Drama,1996.0,242.0,en
+2822,Medicine Man (1992),Adventure,1992.0,106.0,en
+2828,Dudley Do-Right (1999),Comedy|Family|Romance,1999.0,77.0,en
+2835,Chill Factor (1999),Action|Comedy|Thriller,1999.0,101.0,en
+2836,Outside Providence (1999),Romance|Comedy|Drama,1999.0,96.0,en
+2840,Stigmata (1999),Horror,1999.0,103.0,en
+2841,Stir of Echoes (1999),Horror|Mystery|Thriller,1999.0,99.0,en
+2858,American Beauty (1999),Drama,1999.0,122.0,en
+2860,Blue Streak (1999),Action|Comedy|Crime,1999.0,93.0,en
+2861,For Love of the Game (1999),Drama|Romance,1999.0,137.0,en
+2865,Sugar Town (1999),Comedy,1999.0,92.0,en
+2867,Fright Night (1985),Horror|Comedy,2011.0,106.0,en
+2881,Double Jeopardy (1999),Crime|Drama|Mystery|Thriller,1999.0,105.0,en
+2882,Jakob the Liar (1999),Comedy|Drama|History,1999.0,120.0,en
+2883,Mumford (1999),Comedy|Drama|Romance,1999.0,112.0,en
+2888,Drive Me Crazy (1999),Drama|Comedy|Romance|Family,1999.0,91.0,en
+2889,"Mystery, Alaska (1999)",Drama|Comedy,1999.0,119.0,en
+2890,Three Kings (1999),Action|Adventure|Comedy,1999.0,114.0,en
+2891,"Happy, Texas (1999)",Comedy|Crime,1999.0,98.0,en
+2899,Gulliver's Travels (1939),Comedy,2010.0,85.0,en
+2906,Random Hearts (1999),Drama|Romance,1999.0,133.0,en
+2907,Superstar (1999),Comedy|Family,1999.0,81.0,en
+2908,Boys Don't Cry (1999),Crime|Drama,1999.0,118.0,en
+2914,Molly (1999),Drama|Comedy|Romance,1999.0,102.0,en
+2916,Total Recall (1990),Action|Adventure|Science Fiction,1990.0,113.0,en
+2921,High Plains Drifter (1972),Western,1973.0,105.0,en
+2922,Hang 'em High (1967),Western,1968.0,114.0,en
+2926,Hairspray (1988),Family|Comedy|Music|Romance,2007.0,117.0,en
+2929,Reds (1981),Drama|History,1981.0,195.0,en
+2932,Days of Heaven (1978),Drama|Romance,1978.0,94.0,en
+2939,Niagara (1953),Crime|Drama|Thriller,1953.0,92.0,en
+2942,Flashdance (1983),Drama|Music|Romance,1983.0,95.0,en
+2947,Goldfinger (1964),Adventure|Action|Thriller,1964.0,110.0,en
+2948,From Russia with Love (1963),Action|Thriller|Adventure,1963.0,115.0,en
+2949,Dr. No (1962),Adventure|Action|Thriller,1962.0,110.0,en
+2953,Home Alone 2: Lost in New York (1992),Comedy|Family|Adventure|Crime,1992.0,120.0,en
+2954,Penitentiary (1979),Action|Drama,1979.0,99.0,en
+2958,Naturally Native (1998),Drama,1999.0,107.0,en
+2959,Fight Club (1999),Drama,1999.0,139.0,en
+2962,Fever Pitch (1997),Comedy|Drama|Romance,2005.0,103.0,en
+2968,Time Bandits (1981),Family|Fantasy|Science Fiction|Adventure|Comedy,1981.0,116.0,en
+2971,All That Jazz (1979),Drama|Music,1979.0,123.0,en
+2974,Bats (1999),Horror|Thriller,1999.0,91.0,en
+2976,Bringing Out the Dead (1999),Drama,1999.0,121.0,en
+2977,Crazy in Alabama (1999),Comedy|Drama,1999.0,111.0,en
+2978,Three to Tango (1999),Comedy|Romance,1999.0,98.0,en
+2985,Robocop (1987),Action|Science Fiction,2014.0,102.0,en
+2989,For Your Eyes Only (1981),Adventure|Action|Thriller,1981.0,127.0,en
+2990,Licence to Kill (1989),Adventure|Action|Thriller,1989.0,133.0,en
+2991,Live and Let Die (1973),Adventure|Action|Thriller,1973.0,121.0,en
+2993,Thunderball (1965),Adventure|Action|Thriller,1965.0,130.0,en
+2997,Being John Malkovich (1999),Fantasy|Drama|Comedy,1999.0,112.0,en
+2998,Dreaming of Joseph Lees (1998),Romance|Drama,1999.0,92.0,en
+3016,Creepshow (1982),Horror|Comedy|Fantasy,1982.0,120.0,en
+3017,Creepshow 2 (1987),Horror,1987.0,92.0,en
+3029,Nighthawks (1981),Action|Crime|Thriller,1981.0,99.0,en
+3033,Spaceballs (1987),Comedy|Science Fiction,1987.0,96.0,en
+3034,Robin Hood (1973),Action|Adventure,2010.0,140.0,en
+3036,Quest for Fire (1981),Adventure|Drama,1981.0,100.0,xx
+3039,Trading Places (1983),Comedy,1983.0,116.0,en
+3048,Under the Rainbow (1981),Comedy,1981.0,98.0,en
+3050,Light It Up (1999),Drama|Thriller,1999.0,99.0,en
+3051,Anywhere But Here (1999),Drama|Comedy|Romance,1999.0,114.0,en
+3052,Dogma (1999),Fantasy|Comedy|Adventure,1999.0,130.0,en
+3055,Felicia's Journey (1999),Drama,1999.0,116.0,en
+3066,Tora! Tora! Tora! (1970),History|Action|Drama|Adventure|War,1970.0,144.0,en
+3087,Scrooged (1988),Fantasy|Comedy|Drama,1988.0,101.0,en
+3094,Maurice (1987),Drama|Romance,1987.0,134.0,en
+3101,Fatal Attraction (1987),Drama|Romance|Thriller,1987.0,119.0,en
+3104,Midnight Run (1988),Adventure|Comedy|Crime,1988.0,126.0,en
+3113,End of Days (1999),Action|Fantasy|Horror|Mystery,1999.0,121.0,en
+3114,Toy Story 2 (1999),Animation|Comedy|Family,1999.0,92.0,en
+3115,Flawless (1999),Comedy|Drama,1999.0,112.0,en
+3116,Miss Julie (1999),Drama,2014.0,120.0,en
+3117,Ride with the Devil (1999),Drama|War|Romance|Western,1999.0,138.0,en
+3118,Tumbleweeds (1999),Comedy|Drama,1999.0,102.0,en
+3146,Deuce Bigalow: Male Gigolo (1999),Comedy,1999.0,88.0,en
+3155,Anna and the King (1999),Drama|History|Romance,1999.0,148.0,en
+3156,Bicentennial Man (1999),Comedy|Science Fiction,1999.0,131.0,en
+3157,Stuart Little (1999),Animation|Fantasy|Family|Comedy,1999.0,84.0,en
+3159,Fantasia 2000 (1999),Animation|Family|Music,1999.0,74.0,en
+3160,Magnolia (1999),Drama,1999.0,188.0,en
+3163,Topsy-Turvy (1999),Comedy|Drama|Music,1999.0,160.0,en
+3173,Any Given Sunday (1999),Drama,1999.0,163.0,en
+3174,Man on the Moon (1999),Comedy|Drama|Romance,1999.0,118.0,en
+3175,Galaxy Quest (1999),Comedy|Family|Science Fiction,1999.0,102.0,en
+3177,Next Friday (1999),Comedy,2000.0,98.0,en
+3179,Angela's Ashes (1999),Drama,1999.0,145.0,en
+3180,Play it to the Bone (1999),Comedy|Drama,1999.0,124.0,en
+3185,Snow Falling on Cedars (1999),Drama|Romance,1999.0,127.0,en
+3186,"Girl, Interrupted (1999)",Drama,1999.0,127.0,en
+3189,My Dog Skip (1999),Comedy|Drama|Family,2000.0,95.0,en
+3190,Supernova (2000),Horror|Science Fiction|Thriller,2000.0,91.0,en
+3193,Creature (1999),Horror|Science Fiction|Thriller,1998.0,176.0,en
+3210,Fast Times at Ridgemont High (1982),Comedy,1982.0,90.0,en
+3225,Down to You (2000),Comedy|Drama|Family|Romance,2000.0,91.0,en
+3238,Eye of the Beholder (1999),Drama|Mystery|Thriller,1999.0,109.0,en
+3246,Malcolm X (1992),Drama|History,1992.0,202.0,en
+3250,Alive (1993),Action|Adventure|Drama|Thriller,1993.0,120.0,en
+3253,Wayne's World (1992),Music|Comedy,1992.0,94.0,en
+3256,Patriot Games (1992),Drama|Action|Thriller|Crime,1992.0,117.0,en
+3258,Death Becomes Her (1992),Fantasy|Comedy,1992.0,104.0,en
+3260,Howards End (1992),Drama|Romance,1992.0,140.0,en
+3273,Scream 3 (2000),Horror|Mystery,2000.0,116.0,en
+3276,Gun Shy (2000),Action|Comedy|Romance|Thriller,2000.0,101.0,en
+3286,Snow Day (2000),Comedy|Family,2000.0,89.0,en
+3298,Boiler Room (2000),Crime|Drama|Thriller,2000.0,118.0,en
+3299,Hanging Up (2000),Comedy|Drama,2000.0,94.0,en
+3300,Pitch Black (2000),Thriller|Science Fiction|Action,2000.0,108.0,en
+3316,Reindeer Games (2000),Thriller,2000.0,124.0,en
+3317,Wonder Boys (2000),Comedy|Drama,2000.0,111.0,en
+3318,Deterrence (1998),Action|Drama|Mystery|Thriller,2000.0,101.0,en
+3322,3 Strikes (2000),Action|Comedy|Romance,2000.0,82.0,en
+3324,Drowning Mona (2000),Comedy|Crime|Mystery,2000.0,96.0,en
+3326,What Planet Are You From? (2000),Comedy|Drama|Romance|Science Fiction,2000.0,105.0,en
+3327,Beyond the Mat (2000),Documentary,1999.0,102.0,en
+3328,Ghost Dog: The Way of the Samurai (1999),Crime|Drama,1999.0,116.0,en
+3354,Mission to Mars (2000),Science Fiction,2000.0,114.0,en
+3363,American Graffiti (1973),Comedy|Drama,1973.0,110.0,en
+3386,JFK (1991),Drama|Thriller|History,1991.0,189.0,en
+3390,Shanghai Surprise (1986),Adventure,1986.0,97.0,en
+3403,Raise the Titanic (1980),Action|Drama|Thriller,1980.0,115.0,en
+3404,Titanic (1953),Drama|Romance|Thriller,1997.0,194.0,en
+3408,Erin Brockovich (2000),Drama,2000.0,131.0,en
+3409,Final Destination (2000),Horror,2000.0,98.0,en
+3421,Animal House (1978),Comedy,1978.0,109.0,en
+3422,She's Gotta Have It (1986),Comedy|Romance,1986.0,84.0,en
+3423,School Daze (1988),Comedy|Drama,1988.0,121.0,en
+3424,Do the Right Thing (1989),Drama,1989.0,120.0,en
+3425,Mo' Better Blues (1990),Drama|Romance,1990.0,129.0,en
+3438,Teenage Mutant Ninja Turtles (1990),Science Fiction|Action|Adventure|Fantasy|Comedy,2014.0,101.0,en
+3439,Teenage Mutant Ninja Turtles II: The Secret of the Ooze (1991),Science Fiction|Adventure|Action|Comedy|Family,1991.0,88.0,en
+3440,Teenage Mutant Ninja Turtles III (1993),Action|Adventure|Comedy|Family|Fantasy|Science Fiction,1993.0,96.0,en
+3441,Red Dawn (1984),Action|Thriller,1984.0,114.0,en
+3444,Bloodsport (1988),Action,1988.0,92.0,en
+3448,"Good Morning, Vietnam (1987)",Comedy|Drama|War,1987.0,121.0,en
+3452,Romeo Must Die (2000),Action|Crime|Thriller,2000.0,115.0,en
+3453,Here on Earth (2000),Romance,2000.0,96.0,en
+3454,Whatever It Takes (2000),Drama|Comedy|Romance,2000.0,94.0,en
+3462,Modern Times (1936),Drama|Comedy,1936.0,87.0,en
+3467,Hud (1963),Action|Drama|Western,1963.0,112.0,en
+3471,Close Encounters of the Third Kind (1977),Science Fiction|Drama,1977.0,135.0,en
+3479,Ladyhawke (1985),Adventure|Drama|Fantasy|Romance,1985.0,121.0,en
+3481,High Fidelity (2000),Comedy|Drama|Romance|Music,2000.0,113.0,en
+3489,Hook (1991),Adventure|Fantasy|Comedy|Family,1991.0,144.0,en
+3494,True Grit (1969),Drama|Adventure|Western,2010.0,110.0,en
+3504,Network (1976),Drama,1976.0,121.0,en
+3510,Frequency (2000),Crime|Drama|Science Fiction|Thriller,2000.0,118.0,en
+3511,Ready to Rumble (2000),Action|Comedy|Drama,2000.0,107.0,en
+3512,Return to Me (2000),Romance|Comedy|Drama,2000.0,115.0,en
+3519,Force 10 from Navarone (1978),Action|Adventure|War|Thriller,1978.0,118.0,en
+3527,Predator (1987),Science Fiction|Action|Adventure|Thriller,1987.0,107.0,en
+3534,28 Days (2000),Comedy|Drama,2000.0,103.0,en
+3535,American Psycho (2000),Thriller|Drama|Crime,2000.0,102.0,en
+3536,Keeping the Faith (2000),Comedy,2000.0,127.0,en
+3538,East is East (1999),Comedy,1999.0,97.0,en
+3543,Diner (1982),Comedy|Drama,1982.0,110.0,en
+3552,Caddyshack (1980),Comedy,1980.0,98.0,en
+3553,Gossip (2000),Drama|Mystery|Thriller,2000.0,90.0,en
+3555,U-571 (2000),Action|Drama|Thriller|War,2000.0,116.0,en
+3565,Where the Heart Is (2000),Comedy|Drama|Romance,2000.0,120.0,en
+3578,Gladiator (2000),Action|Drama|Adventure,2000.0,155.0,en
+3579,I Dreamed of Africa (2000),Romance|Drama|Adventure,2000.0,114.0,en
+3581,Human Traffic (1999),Comedy|Drama,1999.0,99.0,en
+3593,Battlefield Earth (2000),Action|Science Fiction|War,2000.0,118.0,en
+3594,Center Stage (2000),Drama|Music,2000.0,115.0,en
+3595,Held Up (2000),Comedy,1999.0,89.0,en
+3596,Screwed (2000),Action|Comedy,2000.0,81.0,en
+3597,Whipped (2000),Comedy|Romance,2000.0,82.0,en
+3598,Hamlet (2000),Drama,1996.0,242.0,en
+3615,Dinosaur (2000),Animation|Family,2000.0,82.0,en
+3616,Loser (2000),Drama|Comedy|Romance|Family,2000.0,98.0,en
+3617,Road Trip (2000),Comedy|Adventure,2000.0,93.0,en
+3618,Small Time Crooks (2000),Action|Comedy|Crime,2000.0,94.0,en
+3624,Shanghai Noon (2000),Adventure|Action|Comedy|Western,2000.0,110.0,en
+3633,On Her Majesty's Secret Service (1969),Adventure|Action|Thriller,1969.0,142.0,en
+3638,Moonraker (1979),Action|Adventure|Thriller|Science Fiction,1979.0,126.0,en
+3646,Big Momma's House (2000),Crime|Comedy,2000.0,98.0,en
+3671,Blazing Saddles (1974),Western|Comedy,1974.0,93.0,en
+3672,Benji (1974),Adventure|Family|Romance,1974.0,86.0,en
+3676,Eraserhead (1977),Drama|Fantasy|Horror|Science Fiction,1977.0,89.0,en
+3686,Flatliners (1990),Drama|Horror|Science Fiction|Thriller,1990.0,115.0,en
+3688,Porky's (1981),Comedy,1981.0,94.0,en
+3697,Predator 2 (1990),Science Fiction|Action|Thriller,1990.0,108.0,en
+3702,Mad Max (1979),Adventure|Action|Thriller|Science Fiction,1979.0,93.0,en
+3704,Mad Max Beyond Thunderdome (1985),Action|Adventure|Science Fiction,1985.0,107.0,en
+3707,Nine 1/2 Weeks (1986),Drama|Romance,1986.0,117.0,en
+3708,Firestarter (1984),Fantasy|Drama|Horror|Action|Thriller,1984.0,114.0,en
+3710,Action Jackson (1988),Action|Adventure|Comedy|Crime|Drama,1988.0,96.0,en
+3720,Sunshine (1999),Science Fiction|Thriller,2007.0,107.0,en
+3723,Hamlet (1990),Drama,1996.0,242.0,en
+3724,Coming Home (1978),Drama,2014.0,111.0,zh
+3726,Assault on Precinct 13 (1976),Thriller,2005.0,109.0,en
+3729,Shaft (1971),Action|Adventure|Crime|Thriller,2000.0,99.0,en
+3740,Big Trouble in Little China (1986),Action|Adventure|Comedy|Fantasy,1986.0,99.0,en
+3743,Boys and Girls (2000),Comedy|Drama|Romance,2000.0,94.0,en
+3744,Shaft (2000),Action|Adventure|Crime|Thriller,2000.0,99.0,en
+3745,Titan A.E. (2000),Animation|Action|Science Fiction|Family|Adventure,2000.0,94.0,en
+3747,Jesus' Son (1999),Comedy|Drama|Romance,1999.0,107.0,en
+3751,Chicken Run (2000),Animation|Comedy|Family,2000.0,84.0,en
+3774,House Party 2 (1991),Comedy,1991.0,94.0,en
+3786,But I'm a Cheerleader (1999),Comedy,1999.0,85.0,en
+3790,Groove (2000),Drama|Music|Romance,2000.0,86.0,en
+3791,Footloose (1984),Drama|Family|Music|Romance,1984.0,107.0,en
+3792,Duel in the Sun (1946),Western,1946.0,144.0,en
+3793,X-Men (2000),Adventure|Action|Science Fiction,2000.0,104.0,en
+3794,Chuck & Buck (2000),Comedy|Drama,2000.0,96.0,en
+3798,What Lies Beneath (2000),Drama|Horror|Mystery|Thriller,2000.0,130.0,en
+3820,Thomas and the Magic Railroad (2000),Animation|Drama|Family|Science Fiction,2000.0,85.0,en
+3821,Nutty Professor II: The Klumps (2000),Fantasy|Comedy|Romance|Science Fiction,2000.0,106.0,en
+3823,Wonderland (1999),Crime|Drama|Mystery|Thriller,2003.0,104.0,en
+3824,Autumn in New York (2000),Drama|Romance,2000.0,103.0,en
+3825,Coyote Ugly (2000),Comedy,2000.0,100.0,en
+3826,Hollow Man (2000),Action|Science Fiction|Thriller,2000.0,112.0,en
+3827,Space Cowboys (2000),Action|Adventure|Thriller,2000.0,130.0,en
+3830,Psycho Beach Party (2000),Comedy,2000.0,95.0,en
+3837,Phantasm II (1988),Action|Horror|Science Fiction|Thriller,1988.0,97.0,en
+3846,Easy Money (1983),Drama|Thriller|Crime,2010.0,124.0,sv
+3857,Bless the Child (2000),Drama|Horror|Thriller|Crime,2000.0,107.0,en
+3858,Cecil B. Demented (2000),Thriller|Comedy|Crime,2000.0,87.0,en
+3882,Bring It On (2000),Comedy,2000.0,98.0,en
+3889,Highlander: Endgame (2000),Action|Fantasy|Science Fiction,2000.0,87.0,en
+3893,Nurse Betty (2000),Comedy|Crime|Thriller,2000.0,108.0,en
+3897,Almost Famous (2000),Drama|Music,2000.0,122.0,en
+3898,Bait (2000),Action|Horror|Thriller,2012.0,93.0,en
+3901,Duets (2000),Comedy|Drama|Music,2000.0,112.0,en
+3903,Urbania (2000),Romance|Drama,2000.0,103.0,en
+3908,Urban Legends: Final Cut (2000),Horror,2000.0,97.0,en
+3909,Woman on Top (2000),Comedy|Drama|Romance,2000.0,92.0,en
+3910,Dancer in the Dark (2000),Drama|Crime|Music,2000.0,140.0,en
+3911,Best in Show (2000),Comedy,2000.0,90.0,en
+3916,Remember the Titans (2000),Drama,2000.0,113.0,en
+3917,Hellraiser (1987),Horror,1987.0,94.0,en
+3943,Bamboozled (2000),Comedy|Drama,2000.0,135.0,en
+3945,Digimon: The Movie (2000),Fantasy|Animation|Science Fiction|Family,2000.0,82.0,en
+3946,Get Carter (2000),Action|Drama|Thriller|Crime,2000.0,102.0,en
+3947,Get Carter (1971),Action|Drama|Thriller|Crime,2000.0,102.0,en
+3948,Meet the Parents (2000),Comedy|Romance,2000.0,108.0,en
+3949,Requiem for a Dream (2000),Crime|Drama,2000.0,102.0,en

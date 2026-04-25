@@ -1,0 +1,10 @@
+# docs
+*.md
+
+# env
+.env
+.venv/
+
+# unneeded raw movie data
+data/raw/ml-1m/
+data/raw/tmdb/
