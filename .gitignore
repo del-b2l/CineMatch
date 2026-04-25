@@ -5,6 +5,6 @@
 .env
 .venv/
 
-# unneeded raw movie data
-data/raw/ml-1m/
+# raw movie data
 data/raw/tmdb/
+data/raw/ml-100k/

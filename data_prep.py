@@ -4,94 +4,74 @@ import re
 
 # ── PATHS ──────────────────────────────────────────────────────────────────────
 TMDB_PATH        = "data/raw/tmdb_5000_movies.csv"
-ML_MOVIES_PATH   = "data/raw/movies.dat"
-ML_RATINGS_PATH  = "data/raw/ratings.dat"
+ML_MOVIES_PATH   = "data/raw/ml-100k/u.item"
+ML_RATINGS_PATH  = "data/raw/ml-100k/u.data"
 OUT_MOVIES       = "data/clean/movies_clean.csv"
 OUT_RATINGS      = "data/clean/ratings_clean.csv"
 
 
-# ── STEP 1: Load TMDB ──────────────────────────────────────────────────────────
-print("Loading TMDB...")
-tmdb = pd.read_csv(TMDB_PATH)
+# ── STEP 1: Load MovieLens 100k Movies ──────────────────────────────────────
+print("Loading MovieLens 100k movies...")
+genre_cols = ['unknown', 'Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-Noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
 
-# Keep only the columns we need
-tmdb = tmdb[["title", "release_date", "runtime", "original_language", "genres"]]
-
-# Extract year from release_date (e.g. "2008-07-18" → 2008)
-tmdb["release_year"] = pd.to_datetime(tmdb["release_date"], errors="coerce").dt.year
-
-# Parse genres — this is the key step
-# genres column looks like: '[{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}]'
-# We want: "Action|Adventure"
-def parse_genres(raw):
-    try:
-        genre_list = ast.literal_eval(raw)          # safely parse the string as a Python list
-        return "|".join([g["name"] for g in genre_list])
-    except:
-        return ""
-
-tmdb["genres_clean"] = tmdb["genres"].apply(parse_genres)
-
-# Clean up title (strip whitespace)
-tmdb["title_clean"] = tmdb["title"].str.strip().str.lower()
-
-# Drop rows missing critical CSP fields
-tmdb = tmdb.dropna(subset=["runtime", "release_year", "original_language"])
-tmdb = tmdb[tmdb["runtime"] > 0]
-
-print(f"  TMDB rows after cleaning: {len(tmdb)}")
-
-
-# ── STEP 2: Load MovieLens ─────────────────────────────────────────────────────
-print("Loading MovieLens movies...")
 ml_movies = pd.read_csv(
     ML_MOVIES_PATH,
-    sep="::",
+    sep="|",
     engine="python",
-    names=["movieId", "title", "genres_ml"],
+    names=["movieId", "title", "release_date", "video_release_date", "imdb_url"] + genre_cols,
     encoding="latin-1"
 )
 
 # Extract year from title like "Toy Story (1995)" → 1995
-ml_movies["year"] = ml_movies["title"].str.extract(r"\((\d{4})\)$").astype(float)
+ml_movies["release_year"] = ml_movies["title"].str.extract(r"\((\d{4})\)$").astype(float)
 
-# Clean title for joining: remove the year part and lowercase
-ml_movies["title_clean"] = ml_movies["title"].str.replace(r"\s*\(\d{4}\)$", "", regex=True).str.strip().str.lower()
+# Clean title for consistency: remove the year part and lowercase
+ml_movies["title_clean"] = ml_movies["title"].str.replace(r"\s*\(\d{4}\)$", "", regex=True).str.strip()
 
-print(f"  MovieLens movies loaded: {len(ml_movies)}")
+# Convert genre columns (0/1) to pipe-separated genre names
+def genres_to_string(row):
+    genres = []
+    for genre, val in zip(genre_cols, row[genre_cols]):
+        if val == 1:
+            genres.append(genre)
+    return "|".join(genres) if genres else "unknown"
 
+ml_movies["genres"] = ml_movies.apply(genres_to_string, axis=1)
 
-# ── STEP 3: Join TMDB + MovieLens on title ─────────────────────────────────────
-print("Joining on title...")
-merged = ml_movies.merge(tmdb, on="title_clean", how="inner")
+# Add default values for compatibility
+ml_movies["runtime"] = 120  # default runtime in minutes
+ml_movies["language"] = "en"  # default language
+
+print(f"  MovieLens 100k movies loaded: {len(ml_movies)}")
+
 
 # Build the final movies_clean file
-movies_clean = merged[[
+movies_clean = ml_movies[[
     "movieId",
-    "title_x",            # title from MovieLens (includes year)
-    "genres_clean",       # parsed genres from TMDB, pipe-separated
+    "title",              # title from MovieLens (includes year)
+    "genres",             # parsed genres from MovieLens, pipe-separated
     "release_year",       # integer year
-    "runtime",            # integer minutes
-    "original_language"   # ISO code string e.g. "en"
-]].rename(columns={"title_x": "title", "genres_clean": "genres", "original_language": "language"})
+    "runtime",            # default runtime
+    "language"            # default language
+]]
 
 movies_clean = movies_clean.drop_duplicates(subset="movieId")
 movies_clean.to_csv(OUT_MOVIES, index=False)
 print(f"  movies_clean.csv saved: {len(movies_clean)} movies")
 
 
-# ── STEP 4: Clean Ratings ──────────────────────────────────────────────────────
+# ── STEP 2: Clean Ratings ──────────────────────────────────────────────────────
 print("Loading ratings...")
 ratings = pd.read_csv(
     ML_RATINGS_PATH,
-    sep="::",
+    sep="\t",
     engine="python",
     names=["userId", "movieId", "rating", "timestamp"],
     encoding="latin-1"
 )
 
-# Keep only ratings for movies that survived the join
-valid_movie_ids = set(movies_clean["movieId"])
+# Keep only ratings for movies that exist in our movies data
+valid_movie_ids = set(ml_movies["movieId"])
 ratings_clean = ratings[ratings["movieId"].isin(valid_movie_ids)][["userId", "movieId", "rating"]]
 
 ratings_clean.to_csv(OUT_RATINGS, index=False)
