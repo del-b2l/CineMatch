@@ -1,5 +1,7 @@
 # docs
 *.md
+*.pdf
+*.docx
 
 # env
 .env
