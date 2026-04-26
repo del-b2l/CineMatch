@@ -11,6 +11,9 @@
 data/raw/tmdb/
 data/raw/ml-100k/
 
+# cache files
+data/cache
+
 # pycache
 __pycache__/
 *.pyc
