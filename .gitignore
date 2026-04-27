@@ -1,3 +1,19 @@
-.venv
+# docs
+*.md
+*.pdf
+*.docx
+
+# env
+.env
+.venv/
+
+# cache files
+data/cache
+
+# pycache
+__pycache__/
+*.pyc
+
+# venv
 venv/
-__pycache__
+.venv/
