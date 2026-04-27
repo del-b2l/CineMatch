@@ -9,6 +9,8 @@ def predict_user_based(user, item, train, item_prior, item_likelihood, R):
     for y in R:
         score = math.log(item_prior[item][y])
         for j, r_uj in train[user].items():
+            if j not in item_likelihood.get(item, {}).get(y, {}):
+                continue
             score += math.log(item_likelihood[item][y][j][r_uj])
         scores[y] = score
 
@@ -23,6 +25,8 @@ def predict_item_based(user, item, train_item_ratings, user_prior, user_likeliho
     for y in R:
         score = math.log(user_prior[user][y])
         for v, r_vj in train_item_ratings[item].items():
+            if v not in user_likelihood.get(user, {}).get(y, {}):
+                continue
             score += math.log(user_likelihood[user][y][v][r_vj])
         scores[y] = score
 
@@ -41,6 +45,6 @@ def predict_hybrid(user, item, train, train_item_ratings,
     for y in R:
         scores[y] = (1/(1+u_i)) * scores_item_based[y] + (1/(1+i_u)) * scores_user_based[y]
 
-    return max(scores, key=scores.get)
+    return max(scores, key=scores.get), scores
 
 

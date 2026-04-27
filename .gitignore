@@ -17,3 +17,7 @@ data/cache
 # pycache
 __pycache__/
 *.pyc
+
+#venv
+venv/
+.venv/
