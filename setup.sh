@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e  # stop if anything fails
+pkill -f uvicorn
 
 echo "==> Creating virtual environment..."
 python3 -m venv .venv
