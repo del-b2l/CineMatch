@@ -13,7 +13,7 @@ echo "==> Installing requirements..."
 pip install -r requirements.txt
 
 echo "==> Running backend setup..."
-uvicorn api:app --reload
+uvicorn api:app --reload &
 
 echo "==> Running frontend setup..."
 cd frontend
