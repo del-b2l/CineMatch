@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #14181c;
+  --bg-color-alt: #1f252c;
+  --text-main: #9ab;
+  --text-bright: #fff;
+  --accent-green: #00e054;
+  --accent-orange: #ff8000;
+  --accent-blue: #40bcf4;
+  --border-color: #2c3440;
+  --glass-bg: rgba(31, 37, 44, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-main: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(64, 188, 244, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(0, 224, 84, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--accent-green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--text-bright);
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-bright);
+  margin-top: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-main);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-main);
+}
+
+.primary-btn {
+  background: var(--accent-green);
+  color: var(--bg-color);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.primary-btn:hover {
+  background: #00ff60;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 224, 84, 0.3);
+}
+
+.secondary-btn {
+  background: var(--bg-color-alt);
+  color: var(--text-bright);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--border-color);
+  color: var(--text-bright);
+}
+
+.input-field {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-bright);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+/* Layout utilities */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+
+/* Custom Badge */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-green { background: rgba(0, 224, 84, 0.15); color: var(--accent-green); }
+.badge-orange { background: rgba(255, 128, 0, 0.15); color: var(--accent-orange); }
+.badge-blue { background: rgba(64, 188, 244, 0.15); color: var(--accent-blue); }
+
+/* Header */
+.app-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  background: rgba(20, 24, 28, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-link.active {
+  color: var(--text-bright);
+}
