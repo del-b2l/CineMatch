@@ -15,6 +15,7 @@ echo "==> Running backend setup..."
 uvicorn api:app --reload
 
 echo "==> Running frontend setup..."
+cd frontend
 npm run dev
 
 echo ""
