@@ -120,25 +120,57 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def _movie_title(movie_id):
+    row = movies[movies['movieId'] == movie_id]
+    return row.iloc[0]['title'] if not row.empty else f"Movie {movie_id}"
+
+
 def enrich_recommendations(sorted_scores):
+    """
+    sorted_scores: list of (movie_id, score_dict, p_evidence, q_evidence, alpha_p, alpha_q)
+    """
     recs = []
-    for movie_id, score_dict in sorted_scores:
+    for movie_id, score_dict, p_evidence, q_evidence, alpha_p, alpha_q in sorted_scores:
         predicted_rating = max(score_dict, key=score_dict.get)
         movie_row = movies[movies['movieId'] == movie_id]
         title = movie_row.iloc[0]['title'] if not movie_row.empty else "Unknown"
         genres = movie_row.iloc[0]['genres'] if not movie_row.empty else ""
         year = movie_row.iloc[0]['release_year'] if not movie_row.empty else 0.0
-        
-        # Confidence derived from likelihood spread or just normalized scores.
-        # Since scores are log-probs, we can exp them roughly or just use relative magnitude.
-        # Here we'll do an ad-hoc percentage for visual effect:
+
         best_score = score_dict[predicted_rating]
-        second_best = sorted(score_dict.values(), reverse=True)[1] if len(score_dict)>1 else best_score - 1
+        second_best = sorted(score_dict.values(), reverse=True)[1] if len(score_dict) > 1 else best_score - 1
         confidence = min(max(0.0, 50.0 + (best_score - second_best) * 10), 99.9)
 
-        # Generate simple natural language explanation
-        explanation = f"Because you liked similar {genres.replace('|', ' and ')} movies, we confidently predict a {predicted_rating}/5 rating."
-        
+        # --- Build justification sentence with P and Q evidences ---
+        p_titles = [_movie_title(j) for j, _ in p_evidence]
+        q_users  = [f"User {v}" for v, _ in q_evidence]
+
+        if p_titles and q_users:
+            p_part = ", ".join(p_titles)
+            q_part = ", ".join(q_users)
+            explanation = (
+                f"You will like \u2018{title}\u2019 because you liked "
+                f"{p_part} and it liked to the users {q_part} "
+                f"who share interests with you."
+            )
+        elif p_titles:
+            p_part = ", ".join(p_titles)
+            explanation = (
+                f"You will like \u2018{title}\u2019 because you liked {p_part} "
+                f"(item-based evidence, \u03b1={alpha_p:.2f})."
+            )
+        elif q_users:
+            q_part = ", ".join(q_users)
+            explanation = (
+                f"You will like \u2018{title}\u2019 because of shared taste with "
+                f"{q_part} (user-based evidence, \u03b1={alpha_q:.2f})."
+            )
+        else:
+            explanation = (
+                f"Predicted {predicted_rating}/5 for \u2018{title}\u2019 via hybrid "
+                f"Naive Bayes (\u03b1_P={alpha_p:.2f}, \u03b1_Q={alpha_q:.2f})."
+            )
+
         recs.append(Recommendation(
             movie_id=movie_id,
             predicted_rating=predicted_rating,
@@ -178,52 +210,74 @@ def get_movies(limit: int = 100):
 def get_recommendations(user_id: int, k: int = 10):
     all_items = set(app_state['train_item_rating'].keys())
     train = app_state['train']
-    rated_by_user = set(train[user_id].keys())
+    rated_by_user = set(train.get(user_id, {}).keys())
     candidates = all_items - rated_by_user
-    scores = {}
+
+    raw_scores = {}  # candidate -> (score_dict, p_ev, q_ev, alpha_p, alpha_q)
     for candidate in candidates:
-        predicted_label, score_dict = predict_hybrid(user_id, candidate, train, app_state['train_item_rating'],
-                                           app_state['item_prior'], app_state['item_likelihood'],
-                                           app_state['user_prior'], app_state['user_likelihood'], R)
-        scores[candidate] = score_dict
-    sorted_scores = sorted(scores.items(), key=lambda x: x[1][max(x[1], key=x[1].get)], reverse=True)[:k]
-    
-    recs = enrich_recommendations(sorted_scores)
-    
+        best_y, score_dict, p_ev, q_ev, alpha_p, alpha_q = predict_hybrid(
+            user_id, candidate, train, app_state['train_item_rating'],
+            app_state['item_prior'], app_state['item_likelihood'],
+            app_state['user_prior'], app_state['user_likelihood'], R)
+        raw_scores[candidate] = (score_dict, p_ev, q_ev, alpha_p, alpha_q)
+
+    sorted_candidates = sorted(
+        raw_scores.items(),
+        key=lambda x: x[1][0][max(x[1][0], key=x[1][0].get)],
+        reverse=True
+    )[:k]
+
+    # Build enrichment input and per-item log lines
+    enrichment_input = []
+    log_lines = [
+        "[Hybrid] Naive Bayes recommender initialised.",
+        f"[Hybrid] Scoring {len(candidates)} candidate movies for User {user_id}...",
+    ]
+    for movie_id, (score_dict, p_ev, q_ev, alpha_p, alpha_q) in sorted_candidates:
+        enrichment_input.append((movie_id, score_dict, p_ev, q_ev, alpha_p, alpha_q))
+        best_y = max(score_dict, key=score_dict.get)
+        title  = _movie_title(movie_id)
+        p_names = ", ".join(_movie_title(j) for j, _ in p_ev) or "none"
+        q_names = ", ".join(f"User {v}" for v, _ in q_ev) or "none"
+        log_lines.append(
+            f"[Hybrid] '{title}' → ★{best_y} | "
+            f"α_P={alpha_p:.2f} | α_Q={alpha_q:.2f} | "
+            f"P=[{p_names}] | Q=[{q_names}]"
+        )
+
+    recs = enrich_recommendations(enrichment_input)
+
     # Generate network visualization for the #1 recommendation
     net_data = {}
     if recs:
         best_rec = recs[0]
         nodes = [{"id": f"M{best_rec.movie_id}", "name": best_rec.title, "group": 1, "val": 8}]
         links = []
-        
-        # Add prior node
-        nodes.append({"id": "Prior", "name": f"Item Prior", "group": 3, "val": 4})
+
+        nodes.append({"id": "Prior", "name": "Item Prior", "group": 3, "val": 4})
         links.append({"source": "Prior", "target": f"M{best_rec.movie_id}", "label": "P(r_i)"})
-        
-        # Add up to 3 users who rated this item (User-based perspective)
+
         item_ratings = app_state['train_item_rating'].get(best_rec.movie_id, {})
-        user_list = list(item_ratings.keys())[:3]
-        for u in user_list:
+        _, _, q_ev_top, _, _ = raw_scores[best_rec.movie_id]
+        q_users_top = [v for v, _ in q_ev_top] or list(item_ratings.keys())[:3]
+        for u in q_users_top:
             nodes.append({"id": f"U{u}", "name": f"User {u}", "group": 2, "val": 5})
-            links.append({"source": f"U{u}", "target": f"M{best_rec.movie_id}", "label": "Co-rating Prob"})
-            
-        # Add up to 2 items this user rated (Item-based perspective)
-        user_ratings = train.get(user_id, {})
-        rated_items = list(user_ratings.keys())[:2]
-        for idx, i in enumerate(rated_items):
-            m_row = movies[movies['movieId'] == i]
-            t = m_row.iloc[0]['title'] if not m_row.empty else f"Movie {i}"
-            nodes.append({"id": f"M{i}", "name": t, "group": 4, "val": 5})
-            links.append({"source": f"M{i}", "target": f"M{best_rec.movie_id}", "label": "Item Likelihood"})
-            
+            links.append({"source": f"U{u}", "target": f"M{best_rec.movie_id}", "label": "Q: Co-rater"})
+
+        _, p_ev_top, _, _, _ = raw_scores[best_rec.movie_id]
+        for j, r_uj in p_ev_top:
+            t = _movie_title(j)
+            nodes.append({"id": f"M{j}", "name": t, "group": 4, "val": 5})
+            links.append({"source": f"M{j}", "target": f"M{best_rec.movie_id}",
+                          "label": f"P: rated {r_uj}★"})
+
         net_data = {"nodes": nodes, "links": links}
 
     return RecommendationList(
         user_id=user_id,
         recommendations=recs,
-        log=["User-based and Item-based Collaborative filtering scores calculated.", "AC-3 arc consistency checks bypassed for basic recommendations."],
-        message=f"Found top {k} recommendations.",
+        log=log_lines,
+        message=f"[Hybrid] Found top {k} recommendations for User {user_id}.",
         network_data=net_data
     )
 
@@ -236,52 +290,74 @@ def get_constrained_recommendations(constraint: Constraints):
         if v is not None and k not in exclude
     }
 
-    candidate_ids, log, msg = base_CSP.csp_filter(base_CSP.movies, user_constraints)
+    candidate_ids, csp_log, msg = base_CSP.csp_filter(base_CSP.movies, user_constraints)
     all_items = set(app_state['train_item_rating'].keys())
     train = app_state['train']
-    rated_by_user = set(train[constraint.user_id].keys())
+    rated_by_user = set(train.get(constraint.user_id, {}).keys())
     unrated_movies = all_items - rated_by_user
     candidates = set(candidate_ids) & unrated_movies
-    scores = {}
+
+    raw_scores = {}
     for candidate in candidates:
-        predicted_label, score_dict = predict_hybrid(constraint.user_id, candidate, train, app_state['train_item_rating'],
-                                           app_state['item_prior'], app_state['item_likelihood'],
-                                           app_state['user_prior'], app_state['user_likelihood'], R)
-        scores[candidate] = score_dict
-    sorted_scores = sorted(scores.items(), key=lambda x: x[1][max(x[1], key=x[1].get)], reverse=True)[:constraint.k]
-    
-    recs = enrich_recommendations(sorted_scores)
-    
-    # Generate network visualization for the #1 constrained recommendation
+        best_y, score_dict, p_ev, q_ev, alpha_p, alpha_q = predict_hybrid(
+            constraint.user_id, candidate, train, app_state['train_item_rating'],
+            app_state['item_prior'], app_state['item_likelihood'],
+            app_state['user_prior'], app_state['user_likelihood'], R)
+        raw_scores[candidate] = (score_dict, p_ev, q_ev, alpha_p, alpha_q)
+
+    sorted_candidates = sorted(
+        raw_scores.items(),
+        key=lambda x: x[1][0][max(x[1][0], key=x[1][0].get)],
+        reverse=True
+    )[:constraint.k]
+
+    enrichment_input = []
+    hybrid_log = list(csp_log)  # keep CSP log lines first
+    hybrid_log.append(f"[Hybrid] Scoring {len(candidates)} CSP-filtered candidates for User {constraint.user_id}...")
+    for movie_id, (score_dict, p_ev, q_ev, alpha_p, alpha_q) in sorted_candidates:
+        enrichment_input.append((movie_id, score_dict, p_ev, q_ev, alpha_p, alpha_q))
+        best_y = max(score_dict, key=score_dict.get)
+        title  = _movie_title(movie_id)
+        p_names = ", ".join(_movie_title(j) for j, _ in p_ev) or "none"
+        q_names = ", ".join(f"User {v}" for v, _ in q_ev) or "none"
+        hybrid_log.append(
+            f"[Hybrid] '{title}' → ★{best_y} | "
+            f"α_P={alpha_p:.2f} | α_Q={alpha_q:.2f} | "
+            f"P=[{p_names}] | Q=[{q_names}]"
+        )
+
+    recs = enrich_recommendations(enrichment_input)
+
+    # Network visualisation for the #1 constrained recommendation
     net_data = {}
     if recs:
         best_rec = recs[0]
         nodes = [{"id": f"M{best_rec.movie_id}", "name": best_rec.title, "group": 1, "val": 8}]
         links = []
-        
-        nodes.append({"id": "Prior", "name": f"Item Prior", "group": 3, "val": 4})
+
+        nodes.append({"id": "Prior", "name": "Item Prior", "group": 3, "val": 4})
         links.append({"source": "Prior", "target": f"M{best_rec.movie_id}", "label": "P(r_i)"})
-        
+
         item_ratings = app_state['train_item_rating'].get(best_rec.movie_id, {})
-        user_list = list(item_ratings.keys())[:3]
-        for u in user_list:
+        _, _, q_ev_top, _, _ = raw_scores[best_rec.movie_id]
+        q_users_top = [v for v, _ in q_ev_top] or list(item_ratings.keys())[:3]
+        for u in q_users_top:
             nodes.append({"id": f"U{u}", "name": f"User {u}", "group": 2, "val": 5})
-            links.append({"source": f"U{u}", "target": f"M{best_rec.movie_id}", "label": "Co-rating Prob"})
-            
-        user_ratings = train.get(constraint.user_id, {})
-        rated_items = list(user_ratings.keys())[:2]
-        for idx, i in enumerate(rated_items):
-            m_row = movies[movies['movieId'] == i]
-            t = m_row.iloc[0]['title'] if not m_row.empty else f"Movie {i}"
-            nodes.append({"id": f"M{i}", "name": t, "group": 4, "val": 5})
-            links.append({"source": f"M{i}", "target": f"M{best_rec.movie_id}", "label": "Item Likelihood"})
-            
+            links.append({"source": f"U{u}", "target": f"M{best_rec.movie_id}", "label": "Q: Co-rater"})
+
+        _, p_ev_top, _, _, _ = raw_scores[best_rec.movie_id]
+        for j, r_uj in p_ev_top:
+            t = _movie_title(j)
+            nodes.append({"id": f"M{j}", "name": t, "group": 4, "val": 5})
+            links.append({"source": f"M{j}", "target": f"M{best_rec.movie_id}",
+                          "label": f"P: rated {r_uj}★"})
+
         net_data = {"nodes": nodes, "links": links}
 
     return RecommendationList(
         user_id=constraint.user_id,
         recommendations=recs,
-        log=log,
+        log=hybrid_log,
         message=msg,
         network_data=net_data
     )

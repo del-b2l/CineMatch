@@ -2,15 +2,31 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ForceGraph2D from 'react-force-graph-2d';
-import { 
-  Filter, 
-  Activity, 
-  CheckCircle, 
-  ThumbsDown, 
+import {
+  Filter,
+  Activity,
+  ThumbsDown,
   PlayCircle,
   Database,
-  Search
+  Search,
+  Info
 } from 'lucide-react';
+
+// Colour-code a single log line by its prefix
+function LogLine({ line, idx }) {
+  let color = '#ccc';
+  if (line.startsWith('[Hybrid]')) color = 'var(--accent-blue)';
+  else if (line.startsWith('[P]') || line.includes('P=[')) color = 'var(--accent-green)';
+  else if (line.startsWith('[Q]') || line.includes('Q=[')) color = 'var(--accent-orange)';
+  else if (line.startsWith('[CSP]') || line.startsWith('$ ') || line.startsWith('[AC')) color = '#b39ddb';
+  else if (line.includes('!!') || line.toLowerCase().includes('error')) color = '#ff5252';
+  return (
+    <div key={idx} style={{ marginBottom: '6px', color, lineHeight: '1.4' }}>
+      <span style={{ opacity: 0.5, marginRight: '6px', fontSize: '0.7rem' }}>{String(idx + 1).padStart(2, '0')}</span>
+      {line}
+    </div>
+  );
+}
 
 export default function Recommendations() {
   const location = useLocation();
@@ -215,9 +231,22 @@ export default function Recommendations() {
                     </div>
                   </div>
 
-                  <p style={{ color: 'var(--text-main)', fontSize: '0.95rem', lineHeight: '1.5', margin: '4px 0 16px 0', flex: 1 }}>
-                    {rec.explanation}
-                  </p>
+                  {/* Hybrid justification sentence */}
+                  <div style={{
+                    background: 'rgba(64,188,244,0.06)',
+                    border: '1px solid rgba(64,188,244,0.2)',
+                    borderRadius: '8px',
+                    padding: '12px 14px',
+                    margin: '4px 0 16px 0',
+                    flex: 1
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <Info size={15} color="var(--accent-blue)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <p style={{ color: 'var(--text-bright)', fontSize: '0.9rem', lineHeight: '1.55', margin: 0 }}>
+                        {rec.explanation}
+                      </p>
+                    </div>
+                  </div>
 
                   <div style={{ display: 'flex', gap: '12px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
                     <span style={{ fontSize: '0.85rem', color: 'var(--text-main)', alignSelf: 'center', marginRight: 'auto' }}>Critique this:</span>
@@ -248,69 +277,170 @@ export default function Recommendations() {
             <strong>Status:</strong> {algoMessage || "Idle"}
           </div>
 
-          <div style={{ 
-            flex: 1, 
-            overflowY: 'auto', 
-            background: '#101418', 
-            borderRadius: '6px', 
+          <div style={{
+            flex: 1,
+            overflowY: 'auto',
+            background: '#101418',
+            borderRadius: '6px',
             padding: '12px',
             fontFamily: 'monospace',
-            fontSize: '0.8rem',
+            fontSize: '0.78rem',
             border: '1px solid var(--border-color)'
           }}>
-            <div style={{ color: 'var(--accent-blue)', marginBottom: '8px' }}>&gt; Initializing Bayesian Update...</div>
-            <div style={{ color: 'var(--accent-green)', marginBottom: '12px' }}>[OK] Priors loaded.</div>
-            
+            {/* Static header */}
+            <div style={{ color: 'var(--accent-blue)', marginBottom: '4px' }}>&gt; Initializing Bayesian Update...</div>
+            <div style={{ color: 'var(--accent-green)', marginBottom: '10px' }}>[OK] Priors loaded.</div>
+
+            {/* Dynamic log lines */}
             {(algoLog && algoLog.length > 0) ? (
-              algoLog.map((logStr, i) => (
-                <div key={i} style={{ marginBottom: '8px', color: logStr.includes('!!') ? 'var(--accent-orange)' : '#ccc' }}>
-                  $ {logStr}
-                </div>
-              ))
+              algoLog.map((logStr, i) => <LogLine key={i} line={logStr} idx={i} />)
             ) : (
-             <div style={{ color: '#888' }}>
-               Awaiting CSP execution logs...
-             </div> 
+              <div style={{ color: '#888' }}>Awaiting hybrid execution logs...</div>
             )}
-            
+
+            {/* CSP variable state */}
             <div style={{ marginTop: '12px', color: 'var(--text-main)', borderTop: '1px dashed #333', paddingTop: '8px' }}>
               &gt; CSP Variable Assignments:
               <br/>- genre: {constraints.genre || 'UNBOUND'}
               <br/>- language: {constraints.language || 'UNBOUND'}
               <br/>- k: {constraints.k}
             </div>
+            {/* Legend */}
+            <div style={{ marginTop: '12px', borderTop: '1px dashed #333', paddingTop: '8px', lineHeight: '1.8' }}>
+              <div style={{ color: 'var(--text-main)', marginBottom: '4px', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Legend</div>
+              <div style={{ color: 'var(--accent-blue)', fontSize: '0.72rem' }}>■ [Hybrid] – combined score</div>
+              <div style={{ color: 'var(--accent-green)', fontSize: '0.72rem' }}>■ P evidences – your rated items</div>
+              <div style={{ color: 'var(--accent-orange)', fontSize: '0.72rem' }}>■ Q evidences – similar users</div>
+              <div style={{ color: '#b39ddb', fontSize: '0.72rem' }}>■ [CSP] – constraint propagation</div>
+            </div>
+
             {constraints.runtime && (
               <div style={{ color: 'var(--accent-orange)', marginTop: '4px' }}>
                 &gt; Backtracking: Relaxing... Re-assign runtime {constraints.runtime.join(' ')}
               </div>
             )}
             
-            {/* React Force Graph Render */}
-            {networkData && networkData.nodes && networkData.nodes.length > 0 && (
-              <div style={{ marginTop: '16px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9rem', color: 'var(--accent-blue)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <Activity size={14} /> Network Visualisation
-                </h4>
-                <div style={{ border: '1px solid var(--border-color)', borderRadius: '6px', overflow: 'hidden', background: '#0a0c0f' }}>
-                  <ForceGraph2D
-                    graphData={networkData}
-                    width={278}
-                    height={220}
-                    nodeLabel="name"
-                    nodeAutoColorBy="group"
-                    linkDirectionalArrowLength={3.5}
-                    linkDirectionalArrowRelPos={1}
-                    linkColor={() => 'rgba(255,255,255,0.2)'}
-                    backgroundColor="#0a0c0f"
-                    d3AlphaDecay={0.02}
-                    d3VelocityDecay={0.3}
-                  />
+            {/* React Force Graph Render – custom canvas */}
+            {networkData && networkData.nodes && networkData.nodes.length > 0 && (() => {
+              // colour palette matched to recommender roles
+              const NODE_COLOR = {
+                1: '#f5c518',   // target movie – gold (IMDb-style)
+                2: '#ff8000',   // Q: co-rater user – orange
+                3: '#b39ddb',   // prior – purple
+                4: '#00e054',   // P: item user rated – green
+              };
+              const LINK_COLOR = {
+                'P(r_i)':       '#b39ddb',
+                'Q: Co-rater':  '#ff8000',
+              };
+              const getLinkColor = (link) => {
+                if (link.label && link.label.startsWith('P: rated')) return '#00e054';
+                return LINK_COLOR[link.label] || 'rgba(200,200,200,0.35)';
+              };
+
+              return (
+                <div style={{ marginTop: '16px', borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>
+                  <h4 style={{ margin: '0 0 10px 0', fontSize: '0.85rem', color: 'var(--accent-blue)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <Activity size={14} /> Hybrid Evidence Graph
+                  </h4>
+
+                  <div style={{ border: '1px solid var(--border-color)', borderRadius: '6px', overflow: 'hidden', background: '#0a0c0f' }}>
+                    <ForceGraph2D
+                      graphData={networkData}
+                      width={278}
+                      height={240}
+                      backgroundColor="#0a0c0f"
+                      d3AlphaDecay={0.025}
+                      d3VelocityDecay={0.35}
+                      cooldownTime={2000}
+                      /* Pin the target (group=1) to centre on engine stop */
+                      onEngineStop={() => {
+                        const target = networkData.nodes.find(n => n.group === 1);
+                        if (target) { target.fx = 139; target.fy = 120; }
+                      }}
+                      /* Custom node drawing */
+                      nodeCanvasObject={(node, ctx, globalScale) => {
+                        const color  = NODE_COLOR[node.group] || '#aaa';
+                        const isTarget = node.group === 1;
+                        const r = isTarget ? 9 : 6;
+
+                        // glow ring for target
+                        if (isTarget) {
+                          ctx.beginPath();
+                          ctx.arc(node.x, node.y, r + 4, 0, 2 * Math.PI);
+                          ctx.fillStyle = 'rgba(245,197,24,0.12)';
+                          ctx.fill();
+                        }
+
+                        // filled circle
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+                        ctx.fillStyle = color;
+                        ctx.fill();
+
+                        // white border
+                        ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+
+                        // label below node
+                        const label = node.name.length > 18 ? node.name.slice(0, 17) + '…' : node.name;
+                        const fontSize = isTarget ? 5.5 : 4.5;
+                        ctx.font = `${isTarget ? 600 : 400} ${fontSize}px Inter, sans-serif`;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'top';
+                        ctx.fillStyle = isTarget ? '#f5c518' : 'rgba(255,255,255,0.8)';
+                        ctx.fillText(label, node.x, node.y + r + 2);
+                      }}
+                      nodePointerAreaPaint={(node, color, ctx) => {
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, 10, 0, 2 * Math.PI);
+                        ctx.fill();
+                      }}
+                      /* Arrow colour per link */
+                      linkDirectionalArrowLength={4}
+                      linkDirectionalArrowRelPos={1}
+                      linkColor={getLinkColor}
+                      linkWidth={1.2}
+                      /* Edge labels */
+                      linkCanvasObjectMode={() => 'after'}
+                      linkCanvasObject={(link, ctx) => {
+                        if (!link.label) return;
+                        const srcX = link.source.x, srcY = link.source.y;
+                        const tgtX = link.target.x, tgtY = link.target.y;
+                        const midX = (srcX + tgtX) / 2;
+                        const midY = (srcY + tgtY) / 2;
+
+                        ctx.font = '3.8px Inter, sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+
+                        const txt = link.label.length > 20 ? link.label.slice(0, 19) + '…' : link.label;
+                        const tw = ctx.measureText(txt).width + 3;
+
+                        // pill background
+                        ctx.fillStyle = 'rgba(14,18,24,0.82)';
+                        ctx.beginPath();
+                        ctx.roundRect(midX - tw / 2, midY - 3, tw, 6, 2);
+                        ctx.fill();
+
+                        ctx.fillStyle = getLinkColor(link);
+                        ctx.fillText(txt, midX, midY);
+                      }}
+                    />
+                  </div>
+
+                  {/* Legend */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px 8px', marginTop: '8px', fontSize: '0.7rem' }}>
+                    <span style={{ color: '#f5c518' }}>● Target movie</span>
+                    <span style={{ color: '#00e054' }}>● P: movie you rated</span>
+                    <span style={{ color: '#ff8000' }}>● Q: similar user</span>
+                    <span style={{ color: '#b39ddb' }}>● Item prior</span>
+                  </div>
                 </div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-main)', marginTop: '8px', textAlign: 'center' }}>
-                  Top node dependencies for #1 Match
-                </div>
-              </div>
-            )}
+              );
+            })()}
             
           </div>
         </div>
